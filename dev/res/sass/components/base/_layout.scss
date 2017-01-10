@@ -1,0 +1,36 @@
+/* Layout */
+
+html {
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: $background;
+  background: radial-gradient(circle, $backgroundGradStart, $backgroundGradFinish);
+}
+
+
+
+/* Phone Layout */
+
+@include tx-media(phone) {
+
+  @import '_layout-phone';
+
+}
+
+
+
+/* Print Layout */
+
+@include tx-media(print) {
+
+  @import '_layout-print';
+
+}

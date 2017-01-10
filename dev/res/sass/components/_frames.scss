@@ -1,0 +1,14 @@
+/* Frames */
+
+$framesTransition: 1s;
+
+.frames {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+
+  &-is-sliding {
+    transition: transform $framesTransition;
+  }
+
+}
