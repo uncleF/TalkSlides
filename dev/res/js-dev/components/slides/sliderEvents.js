@@ -6,5 +6,6 @@ module.exports = {
   'next': 'sld:next',
   'prev': 'sld:prev',
   'slide': 'sld:slide',
-  'jump': 'sld:jump'
+  'jump': 'sld:jump',
+  'position': 'sld:position'
 };

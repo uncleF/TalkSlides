@@ -9,6 +9,7 @@ module.exports = _ => {
   const keyboard = require('input/keyboard');
   const mouse = require('input/mouse');
   const socket = require('input/socket');
+  const focus = require('input/focus');
 
   const SLIDES_SLIDE_CLASS_NAME = 'frames-is-sliding';
   const SLIDES_JUMP_CLASS_NAME = 'frames-is-jumping';
@@ -23,6 +24,12 @@ module.exports = _ => {
 
   function generateCSS(index) {
     return `translateX(${index * -100}%) translateZ(0)`;
+  }
+
+  function calculateIndexFromPosition(position) {
+    const width = window.innerWidth;
+    const scroll = width * activeIndex + position;
+    return Math.floor(scroll / width);
   }
 
   function transform(index) {
@@ -65,6 +72,7 @@ module.exports = _ => {
     keyboard(holder);
     mouse(holder);
     socket(holder);
+    focus(holder);
   }
 
   function onSlide(event) {
@@ -75,20 +83,34 @@ module.exports = _ => {
     jump(event.data.index);
   }
 
+  function onPosition(event) {
+    const index = calculateIndexFromPosition(event.data.position);
+    slide(index);
+  }
+
   function subscribe() {
     holder.addEventListener(sliderEvents.next, next);
     holder.addEventListener(sliderEvents.prev, prev);
     holder.addEventListener(sliderEvents.slide, onSlide);
     holder.addEventListener(sliderEvents.jump, onJump);
+    holder.addEventListener(sliderEvents.position, onPosition);
   }
 
-  const slides = [].slice.call(document.getElementsByClassName('frame'));
+  function opening() {
+    let index = parseInt(window.location.hash.replace('#', ''), 10);
+    if (index && typeof index === 'number') {
+      jump(index);
+    }
+  }
+
   const holder = document.getElementById('frames');
-  const maxIndex = slides.length - 0;
+  const slides = [].slice.call(document.getElementsByClassName('frame'));
+  const maxIndex = slides.length - 1;
   let activeIndex = 0;
 
   input();
   subscribe();
+  opening();
 
   return {
     slide: slide,
