@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports = function (catcher) {
+module.exports = function (catcher, slides) {
 
   var sliderEvents = require('slides/sliderEvents');
 
@@ -17,11 +17,13 @@ module.exports = function (catcher) {
   }
 
   function onFocus(event) {
-    // eventManager.trigger(catcher, sliderEvents.position, false, 'UIEvent', {position: });
+    var slide = event.path[event.path.indexOf(catcher) - 1];
+    var index = slides.indexOf(slide);
+    eventManager.trigger(catcher, sliderEvents.slide, false, 'UIEvent', { index: index });
   }
 
-  document.addEventListener('scroll', onForcedScroll);
   catcher.addEventListener('focus', onFocus, true);
+  document.addEventListener('scroll', onForcedScroll);
 };
 
 },{"patterns/tx-event":5,"slides/sliderEvents":6}],2:[function(require,module,exports){
@@ -197,8 +199,7 @@ module.exports = {
   'next': 'sld:next',
   'prev': 'sld:prev',
   'slide': 'sld:slide',
-  'jump': 'sld:jump',
-  'position': 'sld:position'
+  'jump': 'sld:jump'
 };
 
 },{}],7:[function(require,module,exports){
@@ -277,7 +278,7 @@ module.exports = function (_) {
     keyboard(holder);
     mouse(holder);
     socket(holder);
-    focus(holder);
+    focus(holder, slides);
   }
 
   function onSlide(event) {
@@ -288,17 +289,11 @@ module.exports = function (_) {
     jump(event.data.index);
   }
 
-  function onPosition(event) {
-    var index = calculateIndexFromPosition(event.data.position);
-    slide(index);
-  }
-
   function subscribe() {
     holder.addEventListener(sliderEvents.next, next);
     holder.addEventListener(sliderEvents.prev, prev);
     holder.addEventListener(sliderEvents.slide, onSlide);
     holder.addEventListener(sliderEvents.jump, onJump);
-    holder.addEventListener(sliderEvents.position, onPosition);
   }
 
   function opening() {
