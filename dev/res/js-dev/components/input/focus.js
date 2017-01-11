@@ -2,7 +2,7 @@
 
 'use strict';
 
-module.exports = catcher => {
+module.exports = (catcher, slides) => {
 
   const sliderEvents = require('slides/sliderEvents');
 
@@ -15,10 +15,12 @@ module.exports = catcher => {
   }
 
   function onFocus(event) {
-    // eventManager.trigger(catcher, sliderEvents.position, false, 'UIEvent', {position: });
+    const slide = event.path[event.path.indexOf(catcher) - 1];
+    const index = slides.indexOf(slide);
+    eventManager.trigger(catcher, sliderEvents.slide, false, 'UIEvent', {index: index});
   }
 
-  document.addEventListener('scroll', onForcedScroll);
   catcher.addEventListener('focus', onFocus, true);
+  document.addEventListener('scroll', onForcedScroll);
 
 };

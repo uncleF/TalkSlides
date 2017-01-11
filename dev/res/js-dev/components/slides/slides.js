@@ -72,7 +72,7 @@ module.exports = _ => {
     keyboard(holder);
     mouse(holder);
     socket(holder);
-    focus(holder);
+    focus(holder, slides);
   }
 
   function onSlide(event) {
@@ -83,17 +83,11 @@ module.exports = _ => {
     jump(event.data.index);
   }
 
-  function onPosition(event) {
-    const index = calculateIndexFromPosition(event.data.position);
-    slide(index);
-  }
-
   function subscribe() {
     holder.addEventListener(sliderEvents.next, next);
     holder.addEventListener(sliderEvents.prev, prev);
     holder.addEventListener(sliderEvents.slide, onSlide);
     holder.addEventListener(sliderEvents.jump, onJump);
-    holder.addEventListener(sliderEvents.position, onPosition);
   }
 
   function opening() {
