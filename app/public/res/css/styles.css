@@ -24,9 +24,29 @@ body {
   hyphens: manual;
 }
 
-p {
+p,
+ul,
+ol {
   margin: 36px 0;
   margin: 1.125rem 0;
+}
+
+ul,
+ol {
+  padding: 0 0 0 1em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  margin: 24px 0;
+  margin: .75rem 0;
 }
 
 /* Selection */
