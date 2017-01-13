@@ -1,6 +1,7 @@
 /* Frame */
 
 .frame {
+  @include tx-font-size($fontSize);
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
