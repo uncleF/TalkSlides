@@ -33,7 +33,7 @@ $fontSizeQuotient: $fontSize / 16px;
 // Typography
 
 $fontSizes: (
-  h1: $fontSize * txf-pow($fontRatio, 5),
+  h1: $fontSize * txf-pow($fontRatio, 4),
   h2: $fontSize * txf-pow($fontRatio, 4),
   h3: $fontSize * txf-pow($fontRatio, 3),
   h4: $fontSize * txf-pow($fontRatio, 2),

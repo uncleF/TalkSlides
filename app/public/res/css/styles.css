@@ -5,7 +5,7 @@ article {
 }
 
 html {
-  font-size: 32px;
+  font-size: 24px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -24,10 +24,28 @@ body {
   hyphens: manual;
 }
 
+h1 {
+  margin: 0 0 54px;
+  margin: 0 0 2.25rem;
+  font-weight: bold;
+  text-rendering: auto;
+  -webkit-column-break-after: avoid;
+  page-break-after: avoid;
+  break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+h1 {
+  font-size: 49.7664px;
+  font-size: 2.0736rem;
+  line-height: 1.44676;
+}
+
 p,
 ul,
 ol {
-  margin: 36px 0;
+  margin: 27px 0;
   margin: 1.125rem 0;
 }
 
@@ -45,8 +63,16 @@ ol {
 }
 
 li {
-  margin: 24px 0;
+  margin: 18px 0;
   margin: .75rem 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border: 0;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
 }
 
 /* Selection */
@@ -122,6 +148,12 @@ a {
   html,
   body {
     background: #111;
+  }
+
+  img {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   @page {
@@ -217,6 +249,7 @@ body {
 .frames {
   width: 100%;
   height: 100%;
+  font-size: 0;
   white-space: nowrap;
 }
 
@@ -246,6 +279,9 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  font-size: 24px;
+  font-size: 1rem;
+  line-height: 1.5;
   vertical-align: top;
   white-space: normal;
 }
