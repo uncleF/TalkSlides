@@ -1,6 +1,6 @@
 /* Frames */
 
-$framesTransition: 1s;
+$framesTransition: .35s;
 
 .frames {
   width: 100%;
@@ -9,7 +9,7 @@ $framesTransition: 1s;
   white-space: nowrap;
 
   &-is-sliding {
-    transition: transform $framesTransition;
+    transition: transform $framesTransition cubic-bezier(0.610, 0.005, 0.380, 1.005);
   }
 
 }

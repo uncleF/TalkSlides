@@ -17,3 +17,14 @@
   max-width: 40em;
   padding: 0 5em;
 }
+
+.points {
+  @include tx-font-size(h2, 1.5);
+  text-align: center;
+  list-style: none;
+
+  > li {
+    @include tx-rhythm(2, 2);
+  }
+
+}

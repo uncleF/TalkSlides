@@ -12,11 +12,13 @@ $background-print: $background;
 
 // Fonts
 
-$sansSerifFontStack: 'Helvetica Neue', Helvetica, Calibri, Arial, sans-serif;
+$sansSerifFontStack: 'Open Sans', 'Helvetica Neue', Helvetica, Calibri, Arial, sans-serif;
+$sansSerifFontAltStack: 'Open Sans Condensed';
 $serifFontStack: 'Roboto Slab', 'Droid Serif', Cambria, Georgia , 'Times New Roman', Times, serif;
 $monospaceFontStack: Consolas, Monaco, 'Andale Mono', 'Courier New', Courier, Freemono, 'Nimbus Mono L', monospace;
 
 $font-sans: $sansSerifFontStack;
+$font-sansAlt: $sansSerifFontAltStack;
 $font-serif: $serifFontStack;
 $font-mono: $monospaceFontStack;
 
@@ -33,7 +35,7 @@ $fontSizeQuotient: $fontSize / 16px;
 // Typography
 
 $fontSizes: (
-  h1: $fontSize * txf-pow($fontRatio, 4),
+  h1: $fontSize * txf-pow($fontRatio, 7),
   h2: $fontSize * txf-pow($fontRatio, 4),
   h3: $fontSize * txf-pow($fontRatio, 3),
   h4: $fontSize * txf-pow($fontRatio, 2),
