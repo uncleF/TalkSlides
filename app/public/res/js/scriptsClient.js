@@ -24,8 +24,8 @@ module.exports = function (_) {
   }
 
   function interactions() {
-    next.addEventListener('click', onNextClick);
-    prev.addEventListener('click', onPrevClick);
+    next.addEventListener('touchstart', onNextClick);
+    prev.addEventListener('touchstart', onPrevClick);
   }
 
   var next = document.getElementById(NEXT_ID);

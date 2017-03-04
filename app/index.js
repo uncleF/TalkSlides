@@ -28,6 +28,10 @@ function onConnection(socket) {
     io.emit('sld:next');
   });
 
+  socket.on('sld:play', function() {
+    io.emit('sld:play');
+  });
+
 }
 
 function init() {

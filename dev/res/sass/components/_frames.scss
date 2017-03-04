@@ -9,7 +9,7 @@ $framesTransition: .35s;
   white-space: nowrap;
 
   &-is-sliding {
-    transition: transform $framesTransition cubic-bezier(0.610, 0.005, 0.380, 1.005);
+    transition: transform $framesTransition cubic-bezier(.610, .005, .380, 1.005);
   }
 
 }

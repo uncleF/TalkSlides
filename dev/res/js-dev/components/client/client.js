@@ -10,6 +10,7 @@ module.exports = _ => {
 
   const NEXT_ID = 'next';
   const PREV_ID = 'prev';
+  const PLAY_ID = 'play';
 
   function onNextClick(event) {
     event.preventDefault();
@@ -21,13 +22,20 @@ module.exports = _ => {
     socket.emit(sliderEvents.prev);
   }
 
+  function onPlayClick() {
+    event.preventDefault();
+    socket.emit(sliderEvents.play);
+  }
+
   function interactions() {
-    next.addEventListener('click', onNextClick);
-    prev.addEventListener('click', onPrevClick);
+    next.addEventListener('touchstart', onNextClick);
+    prev.addEventListener('touchstart', onPrevClick);
+    play.addEventListener('touchstart', onPlayClick);
   }
 
   const next = document.getElementById(NEXT_ID);
   const prev = document.getElementById(PREV_ID);
+  const play = document.getElementById(PLAY_ID);
 
   interactions();
 

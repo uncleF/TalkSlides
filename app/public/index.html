@@ -16,68 +16,90 @@
 
   <body>
     <div id="frames" class="frames">
-      <div class="frame">
+      <div class="frame chapter0">
         <article class="frameContent">
-          <h1>Производительность
-            <br> web-приложения.</h1>
-          <ol>
-            <li>Скорость загрузки.</li>
-            <li>Скорость работы.</li>
-            <li>Потребление энергии (мобильные телефоны).</li>
-          </ol>
+          <h1>Как работает браузер</h1>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter0">
         <article class="frameContent">
-          <h1>Как работает браузер.</h1>
           <img src="images/browser.png" width="970" height="220" alt="">
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter1">
         <article class="frameContent">
-          <h1>Загрузка приложения</h1>
-          <p>Above the fold контент должен укладываться в&nbsp;14Kb.</p>
-          <p>На 3G сайт должен быть доступен максимум через 3 секунды. Помимо собственно загрузки данных в&nbsp;эти 3 секунды входят в&nbsp;том числе и&nbsp;задржки сети:</p>
-          <ul>
-            <li>Control Plane - ~50мс-2500мс (происходит только 1 раз при просыпании устройства).</li>
-            <li>User-pane + Core-network - ~50мс-500мс.</li>
+          <h1>Производительность
+            <br> web-приложения</h1>
+        </article>
+      </div>
+      <div class="frame chapter1">
+        <article class="frameContent">
+          <ul class="points">
+            <li>Скорость загрузки</li>
+            <li>Скорость работы</li>
+            <li>Потребление энергии</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter1">
         <article class="frameContent">
-          <h1>Скорость работы приложения</h1>
+          <h2>Загрузка приложения</h2>
+          <p>Критический контент должен укладываться в&nbsp;14Kb (размер одного TCP пакета).</p>
+          <p>В 3G-сети сайт должен быть доступен максимум через 3 секунды. Но&nbsp;помимо загрузки данных в&nbsp;это время входят и&nbsp;задржки самой сети:</p>
           <ul>
-            <li>Отклик за&nbsp;~0-100 мс. воспринимается как моментальный.</li>
-            <li>Отклик за&nbsp;~300-1000 мс. может восприниматся как "притормаживающий".</li>
-            <li>При отклике интерфейса больше чем за&nbsp;1 сек. происходит смена контекста и&nbsp;потеря внимания.</li>
+            <li>Control Plane - ~50мс-2500мс (при пробуждении устройства)</li>
+            <li>User Plane + Core Network - ~50мс-500мс</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter1">
         <article class="frameContent">
-          <h1>Расход энергии</h1>
-          <p>Доступ к&nbsp;сайту на&nbsp;мобильном телефоне не&nbsp;бесплатен и&nbsp;потребляет энергию. Пользователя либо нужно убедить, что ваш сайт стоит потери этих ресурсов или минимизировать эти потери.</p>
+          <h2>Скорость работы приложения</h2>
+          <ul>
+            <li>Отклик за&nbsp;~0-100 мс. воспринимается как моментальный</li>
+            <li>Отклик за&nbsp;~300-1000 мс. может восприниматся как "притормаживающий"</li>
+            <li>При отклике интерфейса больше чем в&nbsp;1 сек. у&nbsp;пользователя происходит смена контекста и&nbsp;потеря внимания</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame chapter1">
+        <article class="frameContent">
+          <h2>Расход энергии</h2>
+          <p>Доступ к&nbsp;сайту на&nbsp;мобильном телефоне не&nbsp;бесплатен и&nbsp;расходует энергию. Пользователя нужно убедить, что ваш сайт стоит потери этих ресурсов или минимизировать эти потери.</p>
           <p>Больше всего энергии потребляют:</p>
-          <ol>
+          <ul>
             <li>Видео</li>
             <li>Изображения (большие или масштабированные)</li>
-            <li>JavaScript (UI)</li>
-          </ol>
-        </article>
-      </div>
-      <div class="frame">
-        <article class="frameContent">
-          <ul>
-            <li>1.1 млрд. человек имеет стабильный доступ к&nbsp;интернету.</li>
-            <li>3.2 млрд. человек имеет доступ к&nbsp;интернету в&nbsp;принципе.</li>
-            <li>5.2 млрд. человек владеет мобильным телефоном.</li>
-            <li>7 млрд. человек живет в&nbsp;зоне покрытия как минимум одной сотовой вышки.</li>
+            <li>JavaScript UI&nbsp;thread</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter2">
+        <h1>Статистика</h1>
+      </div>
+      <div class="frame chapter2">
         <article class="frameContent">
+          <h2>Пользователи</h2>
+          <ul>
+            <li>1.1 млрд. человек имеет стабильный доступ к&nbsp;интернету</li>
+            <li>3.2 млрд. человек имеет доступ к&nbsp;интернету в&nbsp;принципе</li>
+            <li>5.2 млрд. человек владеет мобильным телефоном</li>
+            <li>7 млрд. человек живет в&nbsp;зоне покрытия как минимум одной сотовой вышки</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <ul>
+            <li>Юго-Восточная Азия самый быстрорастущий интернет-рынок</li>
+            <li>В Индии количество интернет позьзователей удвоится к&nbsp;2018 году (с 190 млн. до&nbsp;400 млн.)</li>
+            <li>В Китае из&nbsp;690 млн. интернет-пользователей 620 млн. использует для доступа мобильный телефон. Многие из&nbsp;них используют исключительно телефон</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>Трафик</h2>
           <p>Львиная доля трафика с&nbsp;мобильных платформ:</p>
           <ul>
             <li>2011 — Facebook</li>
@@ -87,8 +109,9 @@
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter2">
         <article class="frameContent">
+          <h2>Продажи</h2>
           <p>Процент покупок в&nbsp;интернет-магазинах с&nbsp;мобильного устройства:</p>
           <ul>
             <li>2011 — 14%</li>
@@ -103,16 +126,7 @@
           </ul>
         </article>
       </div>
-      <div class="frame">
-        <article class="frameContent">
-          <ul>
-            <li>Юго-Восточная Азия сейчас самый быстрорастущий интернет-рынок.</li>
-            <li>В Индии количество интернет позьзователей удвоится к&nbsp;2018 году (с 190 млн. до&nbsp;400 млн.).</li>
-            <li>В Китае из&nbsp;690 млн. интернет-пользователей 620 млн. использует для доступа мобильный телефон. Многие из&nbsp;них используют только телефон.</li>
-          </ul>
-        </article>
-      </div>
-      <div class="frame">
+      <div class="frame chapter2">
         <article class="frameContent">
           <ul>
             <li>В 2016 году продажи на&nbsp;Черную Пятницу и&nbsp;Кибер-Понедельник в&nbsp;США составили 2.9 млрд. долларов.</li>
@@ -121,94 +135,140 @@
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter3">
+        <h1>Эффект</h1>
+      </div>
+      <div class="frame chapter3">
         <article class="frameContent">
-          <h1>Ignighter (StepOut)</h1>
-          <p>Самый крупный дейтинг-сайт в&nbsp;Индии.</p>
+          <img src="images/ignighter.jpg" alt="">
+          <p>Ignighter (StepOut) – самый крупный дейтинг-сайт в&nbsp;Индии.</p>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter3">
         <article class="frameContent">
-          <p>GQ уменьшил время загрузки страниц своего сайта с&nbsp;7 до&nbsp;2-х сек. и&nbsp;количество запросов к&nbsp;серверу на&nbsp;400%:</p>
+          <p>GQ уменьшил время загрузки страниц своего сайта с&nbsp;7 до&nbsp;2-х сек:</p>
           <ul>
+            <li>Количество запросов к&nbsp;серверу выросло на&nbsp;400%</li>
             <li>Среднее время проведенное пользователем на&nbsp;сайте выросло с&nbsp;5.9 мин. до&nbsp;7.8 мин.</li>
-            <li>Конверсия рекламы выросла на&nbsp;108%.</li>
+            <li>Конверсия рекламы выросла на&nbsp;108%</li>
           </ul>
-          <p>Walmart обнаружили что на&nbsp;каждую секунду на&nbsp;которую уменьшается время загрузки сайта конверсия растет на&nbsp;2%</p>
+          <p>На каждую секунду, на&nbsp;которую уменьшается время загрузки сайта, конверсия на&nbsp;сайте Walmart растет в&nbsp;серднем на&nbsp;2%</p>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter3">
         <article class="frameContent">
           <p>При (искуственной) задержке в&nbsp;1 секунду на&nbsp;сайте Amazon:</p>
           <ul>
-            <li>Количество просмотров страниц упало на&nbsp;11%</li>
-            <li>Конверсия упала на&nbsp;7%</li>
-            <li>На 16% упал коэффициент удовлетворенности клиентов.</li>
+            <li>Количество просмотров страниц падает на&nbsp;11%</li>
+            <li>Конверсия падает на&nbsp;7%</li>
+            <li>На 16% падает коэффициент удовлетворенности клиентов</li>
           </ul>
           <p>Реальная задержка в&nbsp;1 сек. стоила бы&nbsp;им 1.6 млрд. долларов в&nbsp;год.</p>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter3">
         <article class="frameContent">
           <ul>
-            <li>47% людей ожидают что страница должна загружаться максимум за&nbsp;2 сек.</li>
-            <li>40% пользователей закроют вкладку браузера если сайт загружается больше 3 сек.</li>
-            <li>53% пользователей закроют вкладку браузера если сайт загружается больше 3 сек на&nbsp;мобильном устройстве.</li>
-            <li>52% клиентов онлайн-магазинов что скорость работы сайта один из&nbsp;главных критериев их&nbsp;лояльности сайта.</li>
-            <li>64% клиентов не&nbsp;вернутся на&nbsp;сайт если останутся недовольны опытом покупки.</li>
-            <li>79% клиентов не&nbsp;вернутся на&nbsp;сайт из-за плохой производительности.</li>
+            <li>47% пользователей считают, что страница должна загружаться максимум за&nbsp;2 сек.</li>
+            <li>40% пользователей закроют вкладку браузера если сайт загружается дольше 3 сек.</li>
+            <li>53% пользователей закроют вкладку браузера если сайт загружается дольше 3 сек. на&nbsp;мобильном устройстве</li>
+            <li>52% клиентов онлайн-магазинов считает, что скорость работы сайта это одно из&nbsp;главных условий их&nbsp;лояльности</li>
+            <li>64% клиентов не&nbsp;вернутся на&nbsp;сайт если останутся недовольны опытом покупки, 79% клиентов не&nbsp;вернутся из-за плохой производительности</li>
             <li>Замедление загрузки сайта на&nbsp;1 секунду приводит к&nbsp;сокращению просмотров страниц на&nbsp;4.9%</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter3">
         <article class="frameContent">
-          <h1>Opera Mini (Прокси браузеры)</h1>
+          <p>Мобильные сайты которые загружаются за&nbsp;5 сек против сайтов которые загружаются за&nbsp;19 сек:</p>
           <ul>
-            <li>Очень популярен в&nbsp;развивабщихся странах.</li>
-            <li>AdBlock на&nbsp;уровне браузера. Сайты в&nbsp;среднем на&nbsp;30% быстрее.</li>
-            <li>В среднем пртребляет на&nbsp;14% меньше энергии, чем другие мобильные браузеры.</li>
+            <li>Продают в&nbsp;2 раза больше рекламы.</li>
+            <li>Показывают на&nbsp;25% больше рекламы.</li>
+            <li>Их сессии на&nbsp;70% дольше.</li>
+            <li>Bounce rate ниже на&nbsp;35%.</li>
           </ul>
-          <h2>CSS в&nbsp;Opera Mini:</h2>
+          <p>19 сек. – это средняя скорость загрузки сайта в&nbsp;3G-сети.</p>
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h1>Реакция</h1>
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h2>Opera Mini (прокси-браузеры)</h2>
           <ul>
-            <li>Игнорирует закругленные углы и&nbsp;градиенты.</li>
-            <li>Игнорирует анимации (CSS и&nbsp;SVG).</li>
-            <li>Игнорирует шрифты.</li>
+            <li>Очень популярен в&nbsp;развивабщихся странах</li>
+            <li>AdBlock на&nbsp;уровне браузера. Сайты в&nbsp;среднем на&nbsp;30% быстрее</li>
+            <li>В среднем пртребляет на&nbsp;14% меньше энергии, чем другие мобильные браузеры</li>
+          </ul>
+          <h3>CSS в&nbsp;Opera Mini:</h3>
+          <ul>
+            <li>Игнорирует закругленные углы и&nbsp;градиенты</li>
+            <li>Игнорирует анимации (CSS и&nbsp;SVG)</li>
+            <li>Игнорирует шрифты</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter4">
         <article class="frameContent">
-          <h1>Google AMP
-            <br> (Accelerated Mobile Pages)</h1>
+          <h2>Google AMP ⚡
+            <br> (Accelerated Mobile Pages)</h2>
           <ul>
             <li>Значительно ограничивает HTML и&nbsp;JavaScript в&nbsp;пользу производительности.</li>
             <li>Ограничивает медленные CSS правила и&nbsp;селекторы.</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter4">
         <article class="frameContent">
-          <h1>Facebook Instant Articles</h1>
+          <h2>Facebook Instant Articles</h2>
           <ul>
-            <li>Использует свою собственную инфраструкутуру.</li>
-            <li>В 10 раз быстрее чем посещение сайта.</li>
+            <li>Использует свою собственную инфраструкутуру</li>
+            <li>В 10 раз быстрее чем посещение сайта</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter4">
         <article class="frameContent">
-          <h1>SpeedCurve</h1>
+          <h2>SpeedCurve</h2>
           <ul>
-            <li>Автоматизирует тесты производительности.</li>
-            <li>Автоматически следит за&nbsp;изменением производительности ресурса со&nbsp;временем.</li>
-            <li>Позволяет сравнивать производительность ресурса с&nbsp;производительностью ресурсов конкурентов.</li>
+            <li>Автоматизирует тесты производительности</li>
+            <li>Автоматически следит за&nbsp;изменением производительности приложения</li>
+            <li>Позволяет сравнивать производительность ресурса с&nbsp;производительностью ресурсов конкурентов</li>
           </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter5">
         <article class="frameContent">
-          <h1>Бюджет производительности (Performance budget).</h1>
+          <div class="rutorika"></div>
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <video src="video/betonbrut3g.mp4" muted></video>
+          <a href="#" class="play"></a>
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <img src="images/betonbrut3gSlow.png" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <img src="images/betonbrut3g.png" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <img src="images/betonbrutCost.png" class="fitImage" alt="">
+        </article>
+      </div>
+      <div class="frame chapter6">
+        <article class="frameContent">
+          <h1>Бюджет производительности</h1>
         </article>
       </div>
     </div>

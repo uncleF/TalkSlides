@@ -20,6 +20,8 @@
 
 .points {
   @include tx-font-size(h2, 1.5);
+  margin: 0;
+  font-weight: 600;
   text-align: center;
   list-style: none;
 
@@ -27,4 +29,14 @@
     @include tx-rhythm(2, 2);
   }
 
+}
+
+.rutorika {
+  @include rt-logo($white);
+  width: 700px;
+}
+
+.fitImage {
+  display: block;
+  max-height: 700px;
 }
