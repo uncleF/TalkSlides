@@ -20,7 +20,5 @@ bower_components
 
 #TX
 
-design
-
 *.build.zip
 *.sublime-workspace

@@ -446,6 +446,10 @@ body {
   max-height: 700px;
 }
 
+.browserImage {
+  background: #fff;
+}
+
 /* Chapters */
 
 .chapter0 {
