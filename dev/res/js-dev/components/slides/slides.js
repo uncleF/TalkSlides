@@ -11,8 +11,13 @@ module.exports = _ => {
   const socket = require('input/socket');
   const focus = require('input/focus');
 
+  const PAGE_POINTER_CLASS_NAME = 'page-is-pointer';
   const SLIDES_SLIDE_CLASS_NAME = 'frames-is-sliding';
   const SLIDES_JUMP_CLASS_NAME = 'frames-is-jumping';
+
+  const VELOCITY = 2.25;
+
+  let start;
 
   function getActiveIndex() {
     return activeIndex;
@@ -83,11 +88,37 @@ module.exports = _ => {
     jump(event.data.index);
   }
 
+  function onTrack(event) {
+    const distance = event.data.distance;
+    const position = {
+      x: start.left + (distance.x * VELOCITY),
+      y: start.top + (distance.y * VELOCITY)
+    }
+    pointer.style.transform = `translate(${position.x}px, ${position.y}px) translateZ(0)`
+  }
+
+  function onSnap() {
+    start = pointer.getBoundingClientRect();
+    console.log(start);
+  }
+
+  function onEnable() {
+    document.body.classList.add(PAGE_POINTER_CLASS_NAME);
+  }
+
+  function onDisable() {
+    document.body.classList.remove(PAGE_POINTER_CLASS_NAME);
+  }
+
   function subscribe() {
     holder.addEventListener(sliderEvents.next, next);
     holder.addEventListener(sliderEvents.prev, prev);
     holder.addEventListener(sliderEvents.slide, onSlide);
     holder.addEventListener(sliderEvents.jump, onJump);
+    holder.addEventListener(sliderEvents.track, onTrack);
+    holder.addEventListener(sliderEvents.snap, onSnap);
+    holder.addEventListener(sliderEvents.enable, onEnable);
+    holder.addEventListener(sliderEvents.disable, onDisable);
   }
 
   function opening() {
@@ -100,6 +131,7 @@ module.exports = _ => {
   const holder = document.getElementById('frames');
   const slides = [].slice.call(document.getElementsByClassName('frame'));
   const maxIndex = slides.length - 1;
+  const pointer = document.getElementById('pointer');
   let activeIndex = 0;
 
   input();

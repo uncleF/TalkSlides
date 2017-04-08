@@ -1,0 +1,21 @@
+/* Pointer  */
+
+$pointer-size: 50px;
+$pointer-color: $pr-red;
+
+.pointer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: $pointer-size;
+  height: $pointer-size;
+  border-radius: 50%;
+  background: $pointer-color;
+  mix-blend-mode: difference;
+
+  .page-is-pointer & {
+    display: block;
+  }
+
+}

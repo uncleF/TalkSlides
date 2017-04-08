@@ -3,26 +3,29 @@
 .ui {
   position: relative;
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
+$button-height: 60px;
 $button-color: $white;
 
 %uiButton {
-  @include tx-link($button-color, $all: true);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 50%;
+  height: $button-height;
+  text-indent: -10000px;
 
   &:focus {
     color: $button-color;
+    outline: none;
+  }
+
+  &:before {
+    @include tx-pseudo;
+    top: 50%;
+    left: 50%;
   }
 
 }
@@ -30,14 +33,48 @@ $button-color: $white;
 .next {
   @extend %uiButton;
   background: $pr-greenYellow;
+
+  &:before {
+    @include tx-sprite($spt-mediaFF, true);
+    margin: (txf-sprite-height($spt-mediaFF) / -2) 0 0 (txf-sprite-width($spt-mediaFF) / -2);
+  }
+
 }
 
 .prev {
   @extend %uiButton;
   background: $pr-red;
+
+  &:before {
+    @include tx-sprite($spt-mediaRew, true);
+    margin: (txf-sprite-height($spt-mediaRew) / -2) 0 0 (txf-sprite-width($spt-mediaRew) / -2);
+  }
+
 }
 
-.play {
+.toggle {
   @extend %uiButton;
   background: $pr-blue;
+
+  &:before {
+    @include tx-sprite($spt-mediaTrack, true);
+    margin: (txf-sprite-height($spt-mediaTrack) / -2) 0 0 (txf-sprite-width($spt-mediaTrack) / -2);
+  }
+
+}
+
+.trackpad {
+  position: absolute;
+  top: $button-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $pr-purple;
+  opacity: 0;
+  transition: $UITransitionDefault;
+
+  &-is-active {
+    opacity: 1;
+  }
+
 }

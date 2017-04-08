@@ -28,6 +28,22 @@ function onConnection(socket) {
     io.emit('sld:next');
   });
 
+  socket.on('sld:track', function(distance) {
+    io.emit('sld:track', distance);
+  });
+
+  socket.on('sld:snap', function() {
+    io.emit('sld:snap');
+  });
+
+  socket.on('sld:enable', function() {
+    io.emit('sld:enable');
+  });
+
+  socket.on('sld:disable', function() {
+    io.emit('sld:disable');
+  });
+
 }
 
 function init() {

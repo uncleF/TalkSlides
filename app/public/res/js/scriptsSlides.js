@@ -115,8 +115,28 @@ module.exports = function (catcher) {
     eventManager.trigger(catcher, sliderEvents.next, false, 'UIEvent');
   }
 
+  function onTrack(distance) {
+    eventManager.trigger(catcher, sliderEvents.track, false, 'UIEvent', distance);
+  }
+
+  function onSnap(event) {
+    eventManager.trigger(catcher, sliderEvents.snap, false, 'UIEvent');
+  }
+
+  function onEnable() {
+    eventManager.trigger(catcher, sliderEvents.enable, false, 'UIEvent');
+  }
+
+  function onDisable() {
+    eventManager.trigger(catcher, sliderEvents.disable, false, 'UIEvent');
+  }
+
   socket.on(sliderEvents.prev, onPrev);
   socket.on(sliderEvents.next, onNext);
+  socket.on(sliderEvents.track, onTrack);
+  socket.on(sliderEvents.snap, onSnap);
+  socket.on(sliderEvents.enable, onEnable);
+  socket.on(sliderEvents.disable, onDisable);
 };
 
 },{"patterns/tx-event":5,"slides/sliderEvents":6,"socket.io-client":43}],5:[function(require,module,exports){
@@ -199,7 +219,11 @@ module.exports = {
   'next': 'sld:next',
   'prev': 'sld:prev',
   'slide': 'sld:slide',
-  'jump': 'sld:jump'
+  'jump': 'sld:jump',
+  'track': 'sld:track',
+  'snap': 'sld:snap',
+  'enable': 'sld:enable',
+  'disable': 'sld:disable'
 };
 
 },{}],7:[function(require,module,exports){
@@ -217,8 +241,13 @@ module.exports = function (_) {
   var socket = require('input/socket');
   var focus = require('input/focus');
 
+  var PAGE_POINTER_CLASS_NAME = 'page-is-pointer';
   var SLIDES_SLIDE_CLASS_NAME = 'frames-is-sliding';
   var SLIDES_JUMP_CLASS_NAME = 'frames-is-jumping';
+
+  var VELOCITY = 2.25;
+
+  var start = void 0;
 
   function getActiveIndex() {
     return activeIndex;
@@ -289,11 +318,37 @@ module.exports = function (_) {
     jump(event.data.index);
   }
 
+  function onTrack(event) {
+    var distance = event.data.distance;
+    var position = {
+      x: start.left + distance.x * VELOCITY,
+      y: start.top + distance.y * VELOCITY
+    };
+    pointer.style.transform = 'translate(' + position.x + 'px, ' + position.y + 'px) translateZ(0)';
+  }
+
+  function onSnap() {
+    start = pointer.getBoundingClientRect();
+    console.log(start);
+  }
+
+  function onEnable() {
+    document.body.classList.add(PAGE_POINTER_CLASS_NAME);
+  }
+
+  function onDisable() {
+    document.body.classList.remove(PAGE_POINTER_CLASS_NAME);
+  }
+
   function subscribe() {
     holder.addEventListener(sliderEvents.next, next);
     holder.addEventListener(sliderEvents.prev, prev);
     holder.addEventListener(sliderEvents.slide, onSlide);
     holder.addEventListener(sliderEvents.jump, onJump);
+    holder.addEventListener(sliderEvents.track, onTrack);
+    holder.addEventListener(sliderEvents.snap, onSnap);
+    holder.addEventListener(sliderEvents.enable, onEnable);
+    holder.addEventListener(sliderEvents.disable, onDisable);
   }
 
   function opening() {
@@ -306,6 +361,7 @@ module.exports = function (_) {
   var holder = document.getElementById('frames');
   var slides = [].slice.call(document.getElementsByClassName('frame'));
   var maxIndex = slides.length - 1;
+  var pointer = document.getElementById('pointer');
   var activeIndex = 0;
 
   input();
