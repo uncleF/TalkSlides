@@ -17,3 +17,39 @@
   max-width: 40em;
   padding: 0 5em;
 }
+
+.points {
+  @include tx-font-size(h2, 1.5);
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+  list-style: none;
+
+  > li {
+    @include tx-rhythm(2, 2);
+  }
+
+}
+
+.rutorika {
+  @include rt-logo($white);
+  width: 700px;
+}
+
+.fitImage {
+  display: block;
+  max-height: 700px;
+}
+
+.browserImage {
+  background: $white;
+}
+
+.codeImage {
+  display: block;
+  margin: 1em 0 0;
+}
+
+.options {
+  white-space: nowrap;
+}

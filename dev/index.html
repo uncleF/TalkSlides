@@ -16,32 +16,320 @@
 
   <body>
     <div id="frames" class="frames">
-      <div class="frame">
+      <div class="frame chapter0">
         <article class="frameContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo doloremque cumque ab unde quae numquam eligendi consectetur, quasi veritatis optio? Omnis error, mollitia temporibus autem officiis reiciendis, illo animi eum.</p>
+          <h1>Загрузка сайта</h1>
         </article>
       </div>
-      <div class="frame">
+
+      <div class="frame chapter0">
         <article class="frameContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis nisi fugiat, possimus architecto animi fuga voluptates non dolorem, atque optio autem temporibus commodi at sapiente provident, consequuntur rem rerum nulla.</p>
-          <p>Architecto nihil et aspernatur, illum, debitis quod doloremque nesciunt repellat voluptate eligendi neque animi ratione qui itaque, iusto omnis earum consequatur quo voluptas asperiores ipsam. Omnis dolores, fugiat non delectus.</p>
+          <h2>Процесс загрузки</h2>
+          <img src="images/browserReminder.png" class="browserImage" width="1000" height="500" alt="">
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter0">
         <article class="frameContent">
-          <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Similique error repudiandae et voluptates praesentium labore inventore sed ratione ut amet?</p>
+          <h2>Условия</h2>
+          <ul>
+            <li>сайт – enerberg.com</li>
+            <li>сервер – surge.sh (https, gzip)</li>
+            <li>тесты – webpagetest.com</li>
+          </ul>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter1">
         <article class="frameContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, at libero, dolores quod ex nam officia reiciendis quibusdam veritatis maiores sequi minima? Itaque eum id, maxime soluta ut assumenda dolorem!</p>
-          <p>Modi, laborum officiis eaque maiores animi quasi vero, necessitatibus itaque deleniti quas iusto neque tempora dolorum, saepe corporis optio exercitationem voluptatum impedit aliquam praesentium est. Provident excepturi delectus porro dignissimos?</p>
-          <p>Facilis deserunt libero, dolor et! Itaque dignissimos, aut eveniet maxime, architecto laboriosam omnis ducimus magnam corporis laudantium! Asperiores ratione, fugit explicabo dolorem maxime enim nemo? Maiores, inventore sint deleniti amet.</p>
+          <h1>Baseline</h1>
         </article>
       </div>
-      <div class="frame">
+      <div class="frame chapter1">
         <article class="frameContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, rem.</p>
+          <h2>index.html</h2>
+          <img src="images/e0-code.png" width="679" height="338" alt="">
+        </article>
+      </div>
+      <div class="frame chapter1">
+        <article class="frameContent">
+          <img src="images/e0-results.jpg" width="980" height="768" alt="">
+        </article>
+      </div>
+      <div class="frame chapter1">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e0.png" width="845" height="674" alt="">
+        </article>
+      </div>
+      <div class="frame chapter1">
+        <article class="frameContent">
+          <h2>Кэш</h2>
+          <img src="images/e0-results-return.jpg" width="980" height="768" alt="">
+        </article>
+      </div>
+      <div class="frame chapter1">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e0-return.png" width="845" height="507" alt="">
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h1>Оптимизация ресурсов (CSS, JS, Изображения)</h1>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>CSS</h2>
+          <ol class="options">
+            <li>Мнификация (cssmin, cssnano)</li>
+            <li>Конденсация (css-condense, cssnano)</li>
+            <li>Удаление лишних стилей (uncss, css-razor)</li>
+            <li>Сжатие (gzip)</li>
+          </ol>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>JavaScript</h2>
+          <ol class="options">
+            <li>Мнификация (uglify, jsmin)</li>
+            <li>Code splitting (webpack)</li>
+            <li>Сжатие (gzip)</li>
+          </ol>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>Изображения</h2>
+          <ol class="options">
+            <li>Оптимизация (imagemin)</li>
+            <li>Lazy loading</li>
+            <li>Responsive images (src-set, picture)</li>
+          </ol>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>scr-set</h2>
+          <pre>
+&lt;img src="image.jpg"
+
+  sizes="50vw"
+
+  srcset="image.jpg 200w,
+    image-2x.jpg 400w,
+    image-hd.jpg 600w"&gt;
+    </pre>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>picture</h2>
+          <pre>
+&lt;picture&gt;
+
+  &lt;source media="(max-width: 700px)"
+    sizes="(max-width: 500px) 50vw, 10vw"
+    srcset="image-narrow.jpg 138w, image-narrow-hd.jpg 138w"&gt;
+
+  &lt;source media="(max-width: 1400px)"
+    sizes="(max-width: 1000px) 100vw, 50vw"
+    srcset="image.png 416w, image-hd.png 416w"&gt;
+
+  &lt;img src="image.png" alt="Human"&gt;
+
+&lt;/picture&gt;
+    </pre>
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>index.html</h2>
+          <p>&lt;head&gt;</p>
+          <img src="images/e1-code-head.png" class="codeImage" width="679" height="138" alt="">
+          <p>&lt;body&gt;</p>
+          <img src="images/e1-code-body.png" class="codeImage" width="679" height="51" alt="">
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <img src="images/e1-results.jpg" width="980" height="768" alt="">
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e1.png" width="845" height="676" alt="">
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>Кэш</h2>
+          <img src="images/e1-results-return.jpg" width="980" height="768" alt="">
+        </article>
+      </div>
+      <div class="frame chapter2">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e1-return.png" width="980" height="338" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h1>Оптимизация ресурсов (Шрифты)</h1>
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>Font Squirrel</h2>
+          <img src="images/fswg.png" width="1280" height="675" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>Font Squirrel – Custon Subsetting</h2>
+          <img src="images/fswg-subsetting.png" width="1280" height="675" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>Open Sans</h2>
+          <img src="images/openSans.png" class="browserImage" width="500" height="500" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>Шрифты</h2>
+          <ol class="options">
+            <li>Загрузчики шрифтов (fontfaceloader)</li>
+            <li>prefetch, preload</li>
+            <li>font-display: swap | auto | block | fallback | optional</li>
+          </ol>
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>index.html</h2>
+          <p>&lt;head&gt;</p>
+          <img src="images/e2-code.png" class="codeImage" width="924" height="836" alt="">
+          <p>&lt;body&gt;</p>
+          <img src="images/e1-code-body.png" class="codeImage" width="679" height="51" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <img src="images/e2-results.jpg" width="980" height="938" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e2.png" width="845" height="675" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>Кэш</h2>
+          <img src="images/e2-results-return.jpg" width="980" height="836" alt="">
+        </article>
+      </div>
+      <div class="frame chapter3">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e2-return.png" width="845" height="507" alt="">
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h1>Critical Rendering Path</h1>
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h2>Critical Rendering Path</h2>
+          <ol class="options">
+            <li>base64, inline SVG</li>
+            <li>critical</li>
+            <li>loadCSS, loadJS</li>
+          </ol>
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h2>One Trip Render</h2>
+          <p>Критический контент должен уложиться в 14 Кб</p>
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h2>index.html</h2>
+          <p>&lt;head&gt;</p>
+          <img src="images/e3-code.png" class="codeImage" width="924" height="385" alt="">
+          <p>&lt;body&gt;</p>
+          <img src="images/e1-code-body.png" class="codeImage" width="679" height="51" alt="">
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <img src="images/e3-results.jpg" width="980" height="853" alt="">
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e3.png" width="845" height="676" alt="">
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h2>Кэш</h2>
+          <img src="images/e3-results-return.jpg" width="980" height="904" alt="">
+        </article>
+      </div>
+      <div class="frame chapter4">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e3-return.png" width="845" height="507" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <h1>Service Worker</h1>
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <h2>scripts.js</h2>
+          <img src="images/e4-code-scripts.png" class="codeImage" width="698" height="291" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <h2>service.js</h2>
+          <img src="images/e4-code-sw.png" class="codeImage" width="579" height="854" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <img src="images/e4-results.jpg" width="992" height="845" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e4.png" width="845" height="845" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <h2>Кэш</h2>
+          <img src="images/e4-results-return.jpg" width="980" height="802" alt="">
+        </article>
+      </div>
+      <div class="frame chapter5">
+        <article class="frameContent">
+          <h2>Filmstrip view</h2>
+          <img src="images/e4-return.png" width="845" height="338" alt="">
         </article>
       </div>
     </div>
