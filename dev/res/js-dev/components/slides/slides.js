@@ -15,7 +15,7 @@ module.exports = _ => {
   const SLIDES_SLIDE_CLASS_NAME = 'frames-is-sliding';
   const SLIDES_JUMP_CLASS_NAME = 'frames-is-jumping';
 
-  const VELOCITY = 2.25;
+  const VELOCITY = 2.75;
 
   let start;
 
@@ -99,7 +99,6 @@ module.exports = _ => {
 
   function onSnap() {
     start = pointer.getBoundingClientRect();
-    console.log(start);
   }
 
   function onEnable() {

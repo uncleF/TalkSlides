@@ -245,7 +245,7 @@ module.exports = function (_) {
   var SLIDES_SLIDE_CLASS_NAME = 'frames-is-sliding';
   var SLIDES_JUMP_CLASS_NAME = 'frames-is-jumping';
 
-  var VELOCITY = 2.25;
+  var VELOCITY = 2.75;
 
   var start = void 0;
 
@@ -329,7 +329,6 @@ module.exports = function (_) {
 
   function onSnap() {
     start = pointer.getBoundingClientRect();
-    console.log(start);
   }
 
   function onEnable() {

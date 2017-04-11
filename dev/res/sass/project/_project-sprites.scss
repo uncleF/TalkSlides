@@ -1,16 +1,5 @@
 // sprites.png
 
-// SCSS variables are information about icon's compiled state, stored under its original file name
-//
-// .icon-home {
-//   width: $icon-home-width;
-// }
-//
-// The large array-like variables contain all information about a single icon
-// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
-//
-// At the bottom of this section, we provide information about the spritesheet itself
-// $spritesheet: width height image $spritesheet-sprites;
 $spt-mediaFF-name: 'spt-mediaFF';
 $spt-mediaFF-x: 33px;
 $spt-mediaFF-y: 0;
@@ -62,17 +51,6 @@ $ssh-sprites: (61px, 50px, '../images/sprites.png', $ssh-sprites-sprites);
 
 // sprites@2x.png
 
-// SCSS variables are information about icon's compiled state, stored under its original file name
-//
-// .icon-home {
-//   width: $icon-home-width;
-// }
-//
-// The large array-like variables contain all information about a single icon
-// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
-//
-// At the bottom of this section, we provide information about the spritesheet itself
-// $spritesheet: width height image $spritesheet-sprites;
 $spt-mediaFF-2x-name: 'spt-mediaFF@2x';
 $spt-mediaFF-2x-x: 66px;
 $spt-mediaFF-2x-y: 0;
@@ -125,17 +103,6 @@ $ssh-sprites-2x: (122px, 100px, '../images/sprites@2x.png', $ssh-sprites-2x-spri
 
 // sprites@3x.png
 
-// SCSS variables are information about icon's compiled state, stored under its original file name
-//
-// .icon-home {
-//   width: $icon-home-width;
-// }
-//
-// The large array-like variables contain all information about a single icon
-// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
-//
-// At the bottom of this section, we provide information about the spritesheet itself
-// $spritesheet: width height image $spritesheet-sprites;
 $spt-mediaFF-3x-name: 'spt-mediaFF@3x';
 $spt-mediaFF-3x-x: 99px;
 $spt-mediaFF-3x-y: 0;
