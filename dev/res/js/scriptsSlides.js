@@ -1,5 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -27,7 +26,6 @@ module.exports = function (catcher, slides) {
 };
 
 },{"patterns/tx-event":5,"slides/sliderEvents":6}],2:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -45,7 +43,8 @@ module.exports = function (catcher) {
     40: sliderEvents.next, // Down
     33: sliderEvents.prev, // Page Up
     34: sliderEvents.next, // Page Down
-    32: sliderEvents.next };
+    32: sliderEvents.next // Space
+  };
 
   function onKeyDown(event) {
     var keyCode = event.keyCode;
@@ -60,7 +59,6 @@ module.exports = function (catcher) {
 };
 
 },{"patterns/tx-event":5,"slides/sliderEvents":6}],3:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -95,7 +93,6 @@ module.exports = function (catcher) {
 };
 
 },{"patterns/tx-event":5,"slides/sliderEvents":6}],4:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -120,7 +117,6 @@ module.exports = function (catcher) {
 };
 
 },{"patterns/tx-event":5,"slides/sliderEvents":6,"socket.io-client":43}],5:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -190,7 +186,6 @@ exports.trigger = trigger;
 exports.target = target;
 
 },{}],6:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -203,7 +198,6 @@ module.exports = {
 };
 
 },{}],7:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -277,7 +271,7 @@ module.exports = function (_) {
   function input() {
     keyboard(holder);
     mouse(holder);
-    socket(holder);
+    // socket(holder);
     focus(holder, slides);
   }
 
@@ -322,7 +316,6 @@ module.exports = function (_) {
 };
 
 },{"input/focus":1,"input/keyboard":2,"input/mouse":3,"input/socket":4,"slides/sliderEvents":6}],8:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -865,7 +858,7 @@ module.exports = require('./socket');
  */
 module.exports.parser = require('engine.io-parser');
 
-},{"./socket":20,"engine.io-parser":31}],20:[function(require,module,exports){
+},{"./socket":20,"engine.io-parser":32}],20:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -1607,7 +1600,7 @@ Socket.prototype.filterUpgrades = function (upgrades) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./transport":21,"./transports/index":22,"component-emitter":28,"debug":29,"engine.io-parser":31,"indexof":36,"parsejson":39,"parseqs":40,"parseuri":41}],21:[function(require,module,exports){
+},{"./transport":21,"./transports/index":22,"component-emitter":28,"debug":29,"engine.io-parser":32,"indexof":37,"parsejson":39,"parseqs":40,"parseuri":41}],21:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -1766,7 +1759,7 @@ Transport.prototype.onClose = function () {
   this.emit('close');
 };
 
-},{"component-emitter":28,"engine.io-parser":31}],22:[function(require,module,exports){
+},{"component-emitter":28,"engine.io-parser":32}],22:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies
@@ -2733,7 +2726,7 @@ Polling.prototype.uri = function () {
   return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
 };
 
-},{"../transport":21,"component-inherit":17,"debug":29,"engine.io-parser":31,"parseqs":40,"xmlhttprequest-ssl":27,"yeast":60}],26:[function(require,module,exports){
+},{"../transport":21,"component-inherit":17,"debug":29,"engine.io-parser":32,"parseqs":40,"xmlhttprequest-ssl":27,"yeast":61}],26:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -3022,7 +3015,7 @@ WS.prototype.check = function () {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../transport":21,"component-inherit":17,"debug":29,"engine.io-parser":31,"parseqs":40,"ws":14,"yeast":60}],27:[function(require,module,exports){
+},{"../transport":21,"component-inherit":17,"debug":29,"engine.io-parser":32,"parseqs":40,"ws":14,"yeast":61}],27:[function(require,module,exports){
 (function (global){
 // browser shim for xmlhttprequest module
 
@@ -3063,7 +3056,7 @@ module.exports = function (opts) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"has-cors":35}],28:[function(require,module,exports){
+},{"has-cors":36}],28:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -3611,7 +3604,158 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":38}],31:[function(require,module,exports){
+},{"ms":31}],31:[function(require,module,exports){
+/**
+ * Helpers.
+ */
+
+var s = 1000
+var m = s * 60
+var h = m * 60
+var d = h * 24
+var y = d * 365.25
+
+/**
+ * Parse or format the given `val`.
+ *
+ * Options:
+ *
+ *  - `long` verbose formatting [false]
+ *
+ * @param {String|Number} val
+ * @param {Object} options
+ * @throws {Error} throw an error if val is not a non-empty string or a number
+ * @return {String|Number}
+ * @api public
+ */
+
+module.exports = function (val, options) {
+  options = options || {}
+  var type = typeof val
+  if (type === 'string' && val.length > 0) {
+    return parse(val)
+  } else if (type === 'number' && isNaN(val) === false) {
+    return options.long ?
+			fmtLong(val) :
+			fmtShort(val)
+  }
+  throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val))
+}
+
+/**
+ * Parse the given `str` and return milliseconds.
+ *
+ * @param {String} str
+ * @return {Number}
+ * @api private
+ */
+
+function parse(str) {
+  str = String(str)
+  if (str.length > 10000) {
+    return
+  }
+  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str)
+  if (!match) {
+    return
+  }
+  var n = parseFloat(match[1])
+  var type = (match[2] || 'ms').toLowerCase()
+  switch (type) {
+    case 'years':
+    case 'year':
+    case 'yrs':
+    case 'yr':
+    case 'y':
+      return n * y
+    case 'days':
+    case 'day':
+    case 'd':
+      return n * d
+    case 'hours':
+    case 'hour':
+    case 'hrs':
+    case 'hr':
+    case 'h':
+      return n * h
+    case 'minutes':
+    case 'minute':
+    case 'mins':
+    case 'min':
+    case 'm':
+      return n * m
+    case 'seconds':
+    case 'second':
+    case 'secs':
+    case 'sec':
+    case 's':
+      return n * s
+    case 'milliseconds':
+    case 'millisecond':
+    case 'msecs':
+    case 'msec':
+    case 'ms':
+      return n
+    default:
+      return undefined
+  }
+}
+
+/**
+ * Short format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function fmtShort(ms) {
+  if (ms >= d) {
+    return Math.round(ms / d) + 'd'
+  }
+  if (ms >= h) {
+    return Math.round(ms / h) + 'h'
+  }
+  if (ms >= m) {
+    return Math.round(ms / m) + 'm'
+  }
+  if (ms >= s) {
+    return Math.round(ms / s) + 's'
+  }
+  return ms + 'ms'
+}
+
+/**
+ * Long format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function fmtLong(ms) {
+  return plural(ms, d, 'day') ||
+    plural(ms, h, 'hour') ||
+    plural(ms, m, 'minute') ||
+    plural(ms, s, 'second') ||
+    ms + ' ms'
+}
+
+/**
+ * Pluralization helper.
+ */
+
+function plural(ms, n, name) {
+  if (ms < n) {
+    return
+  }
+  if (ms < n * 1.5) {
+    return Math.floor(ms / n) + ' ' + name
+  }
+  return Math.ceil(ms / n) + ' ' + name + 's'
+}
+
+},{}],32:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -4224,7 +4368,7 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./keys":32,"after":9,"arraybuffer.slice":10,"base64-arraybuffer":12,"blob":13,"has-binary":33,"wtf-8":59}],32:[function(require,module,exports){
+},{"./keys":33,"after":9,"arraybuffer.slice":10,"base64-arraybuffer":12,"blob":13,"has-binary":34,"wtf-8":60}],33:[function(require,module,exports){
 
 /**
  * Gets the keys for an object.
@@ -4245,7 +4389,7 @@ module.exports = Object.keys || function keys (obj){
   return arr;
 };
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 (function (global){
 
 /*
@@ -4308,12 +4452,12 @@ function hasBinary(data) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"isarray":34}],34:[function(require,module,exports){
+},{"isarray":35}],35:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -4332,7 +4476,7 @@ try {
   module.exports = false;
 }
 
-},{}],36:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 
 var indexOf = [].indexOf;
 
@@ -4343,7 +4487,7 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}],37:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 (function (global){
 /*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
 ;(function () {
@@ -5249,157 +5393,6 @@ module.exports = function(arr, obj){
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],38:[function(require,module,exports){
-/**
- * Helpers.
- */
-
-var s = 1000
-var m = s * 60
-var h = m * 60
-var d = h * 24
-var y = d * 365.25
-
-/**
- * Parse or format the given `val`.
- *
- * Options:
- *
- *  - `long` verbose formatting [false]
- *
- * @param {String|Number} val
- * @param {Object} options
- * @throws {Error} throw an error if val is not a non-empty string or a number
- * @return {String|Number}
- * @api public
- */
-
-module.exports = function (val, options) {
-  options = options || {}
-  var type = typeof val
-  if (type === 'string' && val.length > 0) {
-    return parse(val)
-  } else if (type === 'number' && isNaN(val) === false) {
-    return options.long ?
-			fmtLong(val) :
-			fmtShort(val)
-  }
-  throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val))
-}
-
-/**
- * Parse the given `str` and return milliseconds.
- *
- * @param {String} str
- * @return {Number}
- * @api private
- */
-
-function parse(str) {
-  str = String(str)
-  if (str.length > 10000) {
-    return
-  }
-  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str)
-  if (!match) {
-    return
-  }
-  var n = parseFloat(match[1])
-  var type = (match[2] || 'ms').toLowerCase()
-  switch (type) {
-    case 'years':
-    case 'year':
-    case 'yrs':
-    case 'yr':
-    case 'y':
-      return n * y
-    case 'days':
-    case 'day':
-    case 'd':
-      return n * d
-    case 'hours':
-    case 'hour':
-    case 'hrs':
-    case 'hr':
-    case 'h':
-      return n * h
-    case 'minutes':
-    case 'minute':
-    case 'mins':
-    case 'min':
-    case 'm':
-      return n * m
-    case 'seconds':
-    case 'second':
-    case 'secs':
-    case 'sec':
-    case 's':
-      return n * s
-    case 'milliseconds':
-    case 'millisecond':
-    case 'msecs':
-    case 'msec':
-    case 'ms':
-      return n
-    default:
-      return undefined
-  }
-}
-
-/**
- * Short format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtShort(ms) {
-  if (ms >= d) {
-    return Math.round(ms / d) + 'd'
-  }
-  if (ms >= h) {
-    return Math.round(ms / h) + 'h'
-  }
-  if (ms >= m) {
-    return Math.round(ms / m) + 'm'
-  }
-  if (ms >= s) {
-    return Math.round(ms / s) + 's'
-  }
-  return ms + 'ms'
-}
-
-/**
- * Long format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtLong(ms) {
-  return plural(ms, d, 'day') ||
-    plural(ms, h, 'hour') ||
-    plural(ms, m, 'minute') ||
-    plural(ms, s, 'second') ||
-    ms + ' ms'
-}
-
-/**
- * Pluralization helper.
- */
-
-function plural(ms, n, name) {
-  if (ms < n) {
-    return
-  }
-  if (ms < n * 1.5) {
-    return Math.floor(ms / n) + ' ' + name
-  }
-  return Math.ceil(ms / n) + ' ' + name + 's'
-}
-
 },{}],39:[function(require,module,exports){
 (function (global){
 /**
@@ -5686,6 +5679,10 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -5808,7 +5805,7 @@ exports.connect = lookup;
 exports.Manager = require('./manager');
 exports.Socket = require('./socket');
 
-},{"./manager":44,"./socket":46,"./url":47,"debug":49,"socket.io-parser":52}],44:[function(require,module,exports){
+},{"./manager":44,"./socket":46,"./url":47,"debug":49,"socket.io-parser":53}],44:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -6370,7 +6367,7 @@ Manager.prototype.onreconnect = function () {
   this.emitAll('reconnect', attempt);
 };
 
-},{"./on":45,"./socket":46,"backo2":11,"component-bind":15,"component-emitter":48,"debug":49,"engine.io-client":18,"indexof":36,"socket.io-parser":52}],45:[function(require,module,exports){
+},{"./on":45,"./socket":46,"backo2":11,"component-bind":15,"component-emitter":48,"debug":49,"engine.io-client":18,"indexof":37,"socket.io-parser":53}],45:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -6817,7 +6814,7 @@ Socket.prototype.compress = function (compress) {
   return this;
 };
 
-},{"./on":45,"component-bind":15,"component-emitter":48,"debug":49,"has-binary":33,"socket.io-parser":52,"to-array":58}],47:[function(require,module,exports){
+},{"./on":45,"component-bind":15,"component-emitter":48,"debug":49,"has-binary":34,"socket.io-parser":53,"to-array":59}],47:[function(require,module,exports){
 (function (global){
 
 /**
@@ -6902,7 +6899,9 @@ arguments[4][28][0].apply(exports,arguments)
 arguments[4][29][0].apply(exports,arguments)
 },{"./debug":50,"_process":42,"dup":29}],50:[function(require,module,exports){
 arguments[4][30][0].apply(exports,arguments)
-},{"dup":30,"ms":38}],51:[function(require,module,exports){
+},{"dup":30,"ms":51}],51:[function(require,module,exports){
+arguments[4][31][0].apply(exports,arguments)
+},{"dup":31}],52:[function(require,module,exports){
 (function (global){
 /*global Blob,File*/
 
@@ -7047,7 +7046,7 @@ exports.removeBlobs = function(data, callback) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./is-buffer":53,"isarray":56}],52:[function(require,module,exports){
+},{"./is-buffer":54,"isarray":57}],53:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -7453,7 +7452,7 @@ function error(data){
   };
 }
 
-},{"./binary":51,"./is-buffer":53,"component-emitter":16,"debug":54,"json3":37}],53:[function(require,module,exports){
+},{"./binary":52,"./is-buffer":54,"component-emitter":16,"debug":55,"json3":38}],54:[function(require,module,exports){
 (function (global){
 
 module.exports = isBuf;
@@ -7470,7 +7469,7 @@ function isBuf(obj) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 
 /**
  * This is the web browser implementation of `debug()`.
@@ -7640,7 +7639,7 @@ function localstorage(){
   } catch (e) {}
 }
 
-},{"./debug":55}],55:[function(require,module,exports){
+},{"./debug":56}],56:[function(require,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -7839,9 +7838,9 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":57}],56:[function(require,module,exports){
-arguments[4][34][0].apply(exports,arguments)
-},{"dup":34}],57:[function(require,module,exports){
+},{"ms":58}],57:[function(require,module,exports){
+arguments[4][35][0].apply(exports,arguments)
+},{"dup":35}],58:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -7968,7 +7967,7 @@ function plural(ms, n, name) {
   return Math.ceil(ms / n) + ' ' + name + 's';
 }
 
-},{}],58:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 module.exports = toArray
 
 function toArray(list, index) {
@@ -7983,7 +7982,7 @@ function toArray(list, index) {
     return array
 }
 
-},{}],59:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/wtf8 v1.0.0 by @mathias */
 ;(function(root) {
@@ -8221,7 +8220,7 @@ function toArray(list, index) {
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],60:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 'use strict';
 
 var alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split('')

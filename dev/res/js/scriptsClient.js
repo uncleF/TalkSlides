@@ -1,5 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -35,7 +34,6 @@ module.exports = function (_) {
 };
 
 },{"slides/sliderEvents":2,"socket.io-client":38}],2:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -48,7 +46,6 @@ module.exports = {
 };
 
 },{}],3:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -591,7 +588,7 @@ module.exports = require('./socket');
  */
 module.exports.parser = require('engine.io-parser');
 
-},{"./socket":15,"engine.io-parser":26}],15:[function(require,module,exports){
+},{"./socket":15,"engine.io-parser":27}],15:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -1333,7 +1330,7 @@ Socket.prototype.filterUpgrades = function (upgrades) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./transport":16,"./transports/index":17,"component-emitter":23,"debug":24,"engine.io-parser":26,"indexof":31,"parsejson":34,"parseqs":35,"parseuri":36}],16:[function(require,module,exports){
+},{"./transport":16,"./transports/index":17,"component-emitter":23,"debug":24,"engine.io-parser":27,"indexof":32,"parsejson":34,"parseqs":35,"parseuri":36}],16:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -1492,7 +1489,7 @@ Transport.prototype.onClose = function () {
   this.emit('close');
 };
 
-},{"component-emitter":23,"engine.io-parser":26}],17:[function(require,module,exports){
+},{"component-emitter":23,"engine.io-parser":27}],17:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies
@@ -2459,7 +2456,7 @@ Polling.prototype.uri = function () {
   return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
 };
 
-},{"../transport":16,"component-inherit":12,"debug":24,"engine.io-parser":26,"parseqs":35,"xmlhttprequest-ssl":22,"yeast":55}],21:[function(require,module,exports){
+},{"../transport":16,"component-inherit":12,"debug":24,"engine.io-parser":27,"parseqs":35,"xmlhttprequest-ssl":22,"yeast":56}],21:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -2748,7 +2745,7 @@ WS.prototype.check = function () {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../transport":16,"component-inherit":12,"debug":24,"engine.io-parser":26,"parseqs":35,"ws":9,"yeast":55}],22:[function(require,module,exports){
+},{"../transport":16,"component-inherit":12,"debug":24,"engine.io-parser":27,"parseqs":35,"ws":9,"yeast":56}],22:[function(require,module,exports){
 (function (global){
 // browser shim for xmlhttprequest module
 
@@ -2789,7 +2786,7 @@ module.exports = function (opts) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"has-cors":30}],23:[function(require,module,exports){
+},{"has-cors":31}],23:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -3337,7 +3334,158 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":33}],26:[function(require,module,exports){
+},{"ms":26}],26:[function(require,module,exports){
+/**
+ * Helpers.
+ */
+
+var s = 1000
+var m = s * 60
+var h = m * 60
+var d = h * 24
+var y = d * 365.25
+
+/**
+ * Parse or format the given `val`.
+ *
+ * Options:
+ *
+ *  - `long` verbose formatting [false]
+ *
+ * @param {String|Number} val
+ * @param {Object} options
+ * @throws {Error} throw an error if val is not a non-empty string or a number
+ * @return {String|Number}
+ * @api public
+ */
+
+module.exports = function (val, options) {
+  options = options || {}
+  var type = typeof val
+  if (type === 'string' && val.length > 0) {
+    return parse(val)
+  } else if (type === 'number' && isNaN(val) === false) {
+    return options.long ?
+			fmtLong(val) :
+			fmtShort(val)
+  }
+  throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val))
+}
+
+/**
+ * Parse the given `str` and return milliseconds.
+ *
+ * @param {String} str
+ * @return {Number}
+ * @api private
+ */
+
+function parse(str) {
+  str = String(str)
+  if (str.length > 10000) {
+    return
+  }
+  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str)
+  if (!match) {
+    return
+  }
+  var n = parseFloat(match[1])
+  var type = (match[2] || 'ms').toLowerCase()
+  switch (type) {
+    case 'years':
+    case 'year':
+    case 'yrs':
+    case 'yr':
+    case 'y':
+      return n * y
+    case 'days':
+    case 'day':
+    case 'd':
+      return n * d
+    case 'hours':
+    case 'hour':
+    case 'hrs':
+    case 'hr':
+    case 'h':
+      return n * h
+    case 'minutes':
+    case 'minute':
+    case 'mins':
+    case 'min':
+    case 'm':
+      return n * m
+    case 'seconds':
+    case 'second':
+    case 'secs':
+    case 'sec':
+    case 's':
+      return n * s
+    case 'milliseconds':
+    case 'millisecond':
+    case 'msecs':
+    case 'msec':
+    case 'ms':
+      return n
+    default:
+      return undefined
+  }
+}
+
+/**
+ * Short format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function fmtShort(ms) {
+  if (ms >= d) {
+    return Math.round(ms / d) + 'd'
+  }
+  if (ms >= h) {
+    return Math.round(ms / h) + 'h'
+  }
+  if (ms >= m) {
+    return Math.round(ms / m) + 'm'
+  }
+  if (ms >= s) {
+    return Math.round(ms / s) + 's'
+  }
+  return ms + 'ms'
+}
+
+/**
+ * Long format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function fmtLong(ms) {
+  return plural(ms, d, 'day') ||
+    plural(ms, h, 'hour') ||
+    plural(ms, m, 'minute') ||
+    plural(ms, s, 'second') ||
+    ms + ' ms'
+}
+
+/**
+ * Pluralization helper.
+ */
+
+function plural(ms, n, name) {
+  if (ms < n) {
+    return
+  }
+  if (ms < n * 1.5) {
+    return Math.floor(ms / n) + ' ' + name
+  }
+  return Math.ceil(ms / n) + ' ' + name + 's'
+}
+
+},{}],27:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -3950,7 +4098,7 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./keys":27,"after":4,"arraybuffer.slice":5,"base64-arraybuffer":7,"blob":8,"has-binary":28,"wtf-8":54}],27:[function(require,module,exports){
+},{"./keys":28,"after":4,"arraybuffer.slice":5,"base64-arraybuffer":7,"blob":8,"has-binary":29,"wtf-8":55}],28:[function(require,module,exports){
 
 /**
  * Gets the keys for an object.
@@ -3971,7 +4119,7 @@ module.exports = Object.keys || function keys (obj){
   return arr;
 };
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 (function (global){
 
 /*
@@ -4034,12 +4182,12 @@ function hasBinary(data) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"isarray":29}],29:[function(require,module,exports){
+},{"isarray":30}],30:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -4058,7 +4206,7 @@ try {
   module.exports = false;
 }
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 
 var indexOf = [].indexOf;
 
@@ -4069,7 +4217,7 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 (function (global){
 /*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
 ;(function () {
@@ -4975,157 +5123,6 @@ module.exports = function(arr, obj){
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],33:[function(require,module,exports){
-/**
- * Helpers.
- */
-
-var s = 1000
-var m = s * 60
-var h = m * 60
-var d = h * 24
-var y = d * 365.25
-
-/**
- * Parse or format the given `val`.
- *
- * Options:
- *
- *  - `long` verbose formatting [false]
- *
- * @param {String|Number} val
- * @param {Object} options
- * @throws {Error} throw an error if val is not a non-empty string or a number
- * @return {String|Number}
- * @api public
- */
-
-module.exports = function (val, options) {
-  options = options || {}
-  var type = typeof val
-  if (type === 'string' && val.length > 0) {
-    return parse(val)
-  } else if (type === 'number' && isNaN(val) === false) {
-    return options.long ?
-			fmtLong(val) :
-			fmtShort(val)
-  }
-  throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val))
-}
-
-/**
- * Parse the given `str` and return milliseconds.
- *
- * @param {String} str
- * @return {Number}
- * @api private
- */
-
-function parse(str) {
-  str = String(str)
-  if (str.length > 10000) {
-    return
-  }
-  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str)
-  if (!match) {
-    return
-  }
-  var n = parseFloat(match[1])
-  var type = (match[2] || 'ms').toLowerCase()
-  switch (type) {
-    case 'years':
-    case 'year':
-    case 'yrs':
-    case 'yr':
-    case 'y':
-      return n * y
-    case 'days':
-    case 'day':
-    case 'd':
-      return n * d
-    case 'hours':
-    case 'hour':
-    case 'hrs':
-    case 'hr':
-    case 'h':
-      return n * h
-    case 'minutes':
-    case 'minute':
-    case 'mins':
-    case 'min':
-    case 'm':
-      return n * m
-    case 'seconds':
-    case 'second':
-    case 'secs':
-    case 'sec':
-    case 's':
-      return n * s
-    case 'milliseconds':
-    case 'millisecond':
-    case 'msecs':
-    case 'msec':
-    case 'ms':
-      return n
-    default:
-      return undefined
-  }
-}
-
-/**
- * Short format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtShort(ms) {
-  if (ms >= d) {
-    return Math.round(ms / d) + 'd'
-  }
-  if (ms >= h) {
-    return Math.round(ms / h) + 'h'
-  }
-  if (ms >= m) {
-    return Math.round(ms / m) + 'm'
-  }
-  if (ms >= s) {
-    return Math.round(ms / s) + 's'
-  }
-  return ms + 'ms'
-}
-
-/**
- * Long format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtLong(ms) {
-  return plural(ms, d, 'day') ||
-    plural(ms, h, 'hour') ||
-    plural(ms, m, 'minute') ||
-    plural(ms, s, 'second') ||
-    ms + ' ms'
-}
-
-/**
- * Pluralization helper.
- */
-
-function plural(ms, n, name) {
-  if (ms < n) {
-    return
-  }
-  if (ms < n * 1.5) {
-    return Math.floor(ms / n) + ' ' + name
-  }
-  return Math.ceil(ms / n) + ' ' + name + 's'
-}
-
 },{}],34:[function(require,module,exports){
 (function (global){
 /**
@@ -5412,6 +5409,10 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -5534,7 +5535,7 @@ exports.connect = lookup;
 exports.Manager = require('./manager');
 exports.Socket = require('./socket');
 
-},{"./manager":39,"./socket":41,"./url":42,"debug":44,"socket.io-parser":47}],39:[function(require,module,exports){
+},{"./manager":39,"./socket":41,"./url":42,"debug":44,"socket.io-parser":48}],39:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -6096,7 +6097,7 @@ Manager.prototype.onreconnect = function () {
   this.emitAll('reconnect', attempt);
 };
 
-},{"./on":40,"./socket":41,"backo2":6,"component-bind":10,"component-emitter":43,"debug":44,"engine.io-client":13,"indexof":31,"socket.io-parser":47}],40:[function(require,module,exports){
+},{"./on":40,"./socket":41,"backo2":6,"component-bind":10,"component-emitter":43,"debug":44,"engine.io-client":13,"indexof":32,"socket.io-parser":48}],40:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -6543,7 +6544,7 @@ Socket.prototype.compress = function (compress) {
   return this;
 };
 
-},{"./on":40,"component-bind":10,"component-emitter":43,"debug":44,"has-binary":28,"socket.io-parser":47,"to-array":53}],42:[function(require,module,exports){
+},{"./on":40,"component-bind":10,"component-emitter":43,"debug":44,"has-binary":29,"socket.io-parser":48,"to-array":54}],42:[function(require,module,exports){
 (function (global){
 
 /**
@@ -6628,7 +6629,9 @@ arguments[4][23][0].apply(exports,arguments)
 arguments[4][24][0].apply(exports,arguments)
 },{"./debug":45,"_process":37,"dup":24}],45:[function(require,module,exports){
 arguments[4][25][0].apply(exports,arguments)
-},{"dup":25,"ms":33}],46:[function(require,module,exports){
+},{"dup":25,"ms":46}],46:[function(require,module,exports){
+arguments[4][26][0].apply(exports,arguments)
+},{"dup":26}],47:[function(require,module,exports){
 (function (global){
 /*global Blob,File*/
 
@@ -6773,7 +6776,7 @@ exports.removeBlobs = function(data, callback) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./is-buffer":48,"isarray":51}],47:[function(require,module,exports){
+},{"./is-buffer":49,"isarray":52}],48:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -7179,7 +7182,7 @@ function error(data){
   };
 }
 
-},{"./binary":46,"./is-buffer":48,"component-emitter":11,"debug":49,"json3":32}],48:[function(require,module,exports){
+},{"./binary":47,"./is-buffer":49,"component-emitter":11,"debug":50,"json3":33}],49:[function(require,module,exports){
 (function (global){
 
 module.exports = isBuf;
@@ -7196,7 +7199,7 @@ function isBuf(obj) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],49:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 
 /**
  * This is the web browser implementation of `debug()`.
@@ -7366,7 +7369,7 @@ function localstorage(){
   } catch (e) {}
 }
 
-},{"./debug":50}],50:[function(require,module,exports){
+},{"./debug":51}],51:[function(require,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -7565,9 +7568,9 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":52}],51:[function(require,module,exports){
-arguments[4][29][0].apply(exports,arguments)
-},{"dup":29}],52:[function(require,module,exports){
+},{"ms":53}],52:[function(require,module,exports){
+arguments[4][30][0].apply(exports,arguments)
+},{"dup":30}],53:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -7694,7 +7697,7 @@ function plural(ms, n, name) {
   return Math.ceil(ms / n) + ' ' + name + 's';
 }
 
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 module.exports = toArray
 
 function toArray(list, index) {
@@ -7709,7 +7712,7 @@ function toArray(list, index) {
     return array
 }
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/wtf8 v1.0.0 by @mathias */
 ;(function(root) {
@@ -7947,7 +7950,7 @@ function toArray(list, index) {
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],55:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 'use strict';
 
 var alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split('')

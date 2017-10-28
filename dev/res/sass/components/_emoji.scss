@@ -1,0 +1,6 @@
+$emoji-fontSize: 220px;
+
+.emoji {
+  @include tx-font-size($emoji-fontSize);
+  line-height: 1;
+}
