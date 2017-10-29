@@ -87,6 +87,7 @@ h1 {
 
 h2 {
   @extend %header;
+  @include tx-rhythm(.75, .75);
   @include tx-font-size(h2);
 }
 

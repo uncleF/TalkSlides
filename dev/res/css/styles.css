@@ -49,6 +49,8 @@ h1 {
 }
 
 h2 {
+  margin: 36px 0;
+  margin: 1.125rem 0;
   font-size: 66.3552px;
   font-size: 2.0736rem;
   line-height: 1.44676;
@@ -709,6 +711,21 @@ body {
 .columnHeader {
   width: 100%;
   text-align: center;
+}
+
+.columnText {
+  padding: 0;
+  -webkit-columns: 2;
+          columns: 2;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
+  list-style: none;
+}
+
+.columnText li {
+  padding: 12px 0;
+  padding: 0.375rem 0;
+  margin: 0;
 }
 
 .emoji {

@@ -24,3 +24,16 @@ $columnNote-fontSize: 24px;
   width: 100%;
   text-align: center;
 }
+
+.columnText {
+  padding: 0;
+  columns: 2;
+  column-gap: 100px;
+  list-style: none;
+
+  li {
+    @include tx-rhythm-padding(.25, .25);
+    margin: 0;
+  }
+
+}
