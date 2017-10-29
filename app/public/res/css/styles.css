@@ -1,3 +1,11 @@
+/* Pseudo Element */
+
+.hamburger:before {
+  position: absolute;
+  content: '';
+  display: block;
+}
+
 /* Baseline, Typography & Vertical Rhythm */
 
 article {
@@ -13,7 +21,7 @@ html {
 }
 
 body {
-  color: #fff;
+  color: #111;
   font-family: 'Helvetica Neue', Helvetica, Calibri, Arial, sans-serif;
   -webkit-font-feature-settings: 'liga' 1, 'clig' 1, 'kern' 1;
   font-feature-settings: 'liga' 1, 'clig' 1, 'kern' 1;
@@ -24,9 +32,66 @@ body {
   hyphens: manual;
 }
 
-p {
+h1,
+h2 {
+  margin: 96px 0 36px;
+  margin: 3rem 0 1.125rem;
+  font-weight: bold;
+  text-rendering: auto;
+  -webkit-column-break-after: avoid;
+  break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+h1 {
+  font-size: 79.62624px;
+  font-size: 2.48832rem;
+  line-height: 1.20563;
+}
+
+h2 {
   margin: 36px 0;
   margin: 1.125rem 0;
+  font-size: 66.3552px;
+  font-size: 2.0736rem;
+  line-height: 1.44676;
+}
+
+p,
+ul,
+video {
+  margin: 36px 0;
+  margin: 1.125rem 0;
+}
+
+ul {
+  padding: 0 0 0 1em;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  margin: 24px 0;
+  margin: .75rem 0;
+}
+
+strike {
+  text-decoration: line-through;
+}
+
+u {
+  text-decoration: underline;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border: 0;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
 }
 
 /* Selection */
@@ -52,7 +117,6 @@ a {
   color: #176191;
   -webkit-tap-highlight-color: rgba(15, 66, 99, .25);
   text-decoration: underline;
-  -webkit-transition: .2s;
   transition: .2s;
 }
 
@@ -101,7 +165,12 @@ a {
 
   html,
   body {
-    background: #111;
+    background: #fff;
+  }
+
+  img {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
   }
 
   @page {
@@ -110,7 +179,7 @@ a {
   }
 
   body {
-    color: #fff;
+    color: #111;
     font-size: 12pt;
     line-height: 1.5;
   }
@@ -127,14 +196,14 @@ a {
   }
 
   a {
-    color: #fff;
+    color: #111;
     text-decoration: none;
   }
 
   a:visited,
   a:hover,
   a:active {
-    color: #fff;
+    color: #111;
   }
 
   a:after {
@@ -160,9 +229,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  background: #111;
-  background: -webkit-radial-gradient(circle, #5698c4, #0f4263);
-  background: radial-gradient(circle, #5698c4, #0f4263);
+  background: #fff;
 }
 
 /* Phone Layout */
@@ -202,10 +269,9 @@ body {
 }
 
 .frames-is-sliding {
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
 }
 
 /* Frame */
@@ -234,9 +300,246 @@ body {
   white-space: normal;
 }
 
+.frame-is-dark {
+  color: #fff;
+  background: #111;
+}
+
 .frameContent {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
   max-width: 40em;
   padding: 0 5em;
+}
+
+.frameContent-is-columns {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.frameContent-is-screenshots {
+  text-align: center;
+}
+
+.frameImage {
+  display: block;
+  width: 100%;
+  max-height: 95%;
+
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.frameVideo {
+  display: block;
+  width: 100%;
+  max-height: 95%;
+
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.frameGallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.frameChain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.frameChain-is-vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.chainImage {
+  margin: 0 5px;
+}
+
+.chainVerticalImage {
+  display: block;
+  margin: 5px auto;
+}
+
+.chainSmallerVerticalImage {
+  max-width: 80%;
+  margin: 5px auto;
+}
+
+.chainSmallerImage {
+  max-width: 42%;
+  margin: 0 5px;
+}
+
+/* Columns */
+
+.column {
+  box-sizing: border-box;
+  max-width: 50%;
+  padding: 0 2em;
+  text-align: center;
+}
+
+.columnImage {
+  display: block;
+  margin: 0 auto 1.5em;
+}
+
+.columnNote {
+  display: block;
+  font-size: 24px;
+  font-size: .75rem;
+  line-height: 2;
+  line-height: 1.5;
+}
+
+.columnText {
+  padding: 0;
+  -webkit-columns: 2;
+  columns: 2;
+  -webkit-column-gap: 100px;
+  column-gap: 100px;
+  list-style: none;
+}
+
+.columnText li {
+  padding: 12px 0;
+  padding: .375rem 0;
+  margin: 0;
+}
+
+.coverImage {
+  width: 100%;
+}
+
+.emoji {
+  font-size: 220px;
+  font-size: 6.875rem;
+  line-height: 1.09091;
+  line-height: 1;
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 90px;
+  height: 90px;
+  border-width: 20px 0 20px;
+  border-style: solid;
+  border-color: #fff;
+  margin: 20px 0 0;
+}
+
+.hamburger:before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  margin: -10px 0 0;
+  background: #fff;
+}
+
+.galleryImage {
+  width: 15%;
+  max-width: 400px;
+  margin: 3.5% 5%;
+}
+
+.screenShotNote {
+  margin: 1em 0 0;
+  text-align: center;
+}
+
+.screenshotPhone {
+  display: inline-block;
+  max-width: 350px;
+  vertical-align: top;
+}
+
+.screenshotSmallerPhone {
+  display: inline-block;
+  max-width: 270px;
+  vertical-align: top;
+}
+
+.screenshotSmallestPhone {
+  display: inline-block;
+  max-width: 200px;
+  vertical-align: top;
+}
+
+.select1 {
+  color: #b34251;
+}
+
+.select2 {
+  color: #3ac957;
+}
+
+.select3 {
+  color: #e0b661;
+}
+
+.select4 {
+  color: #5c334f;
+}
+
+.select5 {
+  color: #db6c56;
+}
+
+.select6 {
+  color: #00a2e8;
+}
+
+.selectL {
+  color: #fffa5e;
+}
+
+.selectR {
+  color: #d17f0d;
 }
 
 /* Client UI */
