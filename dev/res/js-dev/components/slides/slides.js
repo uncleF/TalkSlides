@@ -71,7 +71,7 @@ module.exports = _ => {
   function input() {
     keyboard(holder);
     mouse(holder);
-    // socket(holder);
+    socket(holder);
     focus(holder, slides);
   }
 
