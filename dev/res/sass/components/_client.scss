@@ -2,6 +2,8 @@
 
 .ui {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
@@ -10,14 +12,12 @@ $button-color: $white;
 
 %uiButton {
   @include tx-link($button-color, $all: true);
-  position: absolute;
-  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
   width: 100%;
-  height: 50%;
   text-align: center;
   text-decoration: none;
 
@@ -27,18 +27,17 @@ $button-color: $white;
 
 }
 
-$next-background: $red;
-
 .next {
   @extend %uiButton;
-  top: 0;
-  background: $next-background;
+  background: $green;
 }
-
-$prev-background: $green;
 
 .prev {
   @extend %uiButton;
-  bottom: 0;
-  background: $prev-background;
+  background: $red;
+}
+
+.play {
+  @extend %uiButton;
+  background: $blue;
 }

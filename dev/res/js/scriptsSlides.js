@@ -112,8 +112,13 @@ module.exports = function (catcher) {
     eventManager.trigger(catcher, sliderEvents.next, false, 'UIEvent');
   }
 
+  function onPlay() {
+    eventManager.trigger(catcher, sliderEvents.play, false, 'UIEvent');
+  }
+
   socket.on(sliderEvents.prev, onPrev);
   socket.on(sliderEvents.next, onNext);
+  socket.on(sliderEvents.play, onPlay);
 };
 
 },{"patterns/tx-event":5,"slides/sliderEvents":6,"socket.io-client":43}],5:[function(require,module,exports){
@@ -194,7 +199,8 @@ module.exports = {
   'next': 'sld:next',
   'prev': 'sld:prev',
   'slide': 'sld:slide',
-  'jump': 'sld:jump'
+  'jump': 'sld:jump',
+  'play': 'sld:play'
 };
 
 },{}],7:[function(require,module,exports){
@@ -258,13 +264,35 @@ module.exports = function (_) {
     move(index);
   }
 
+  function toggleVideo() {
+    console.log('!!!');
+    var video = document.querySelectorAll('.frame')[activeIndex].getElementsByTagName('video')[0];
+    if (video) {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  }
+
+  function stopVideo() {
+    var video = document.querySelectorAll('.frame')[activeIndex].getElementsByTagName('video')[0];
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+
   function next() {
     var newIndex = activeIndex === maxIndex ? maxIndex : activeIndex + 1;
+    stopVideo();
     slide(newIndex);
   }
 
   function prev() {
     var newIndex = activeIndex === 0 ? 0 : activeIndex - 1;
+    stopVideo();
     slide(newIndex);
   }
 
@@ -283,11 +311,17 @@ module.exports = function (_) {
     jump(event.data.index);
   }
 
+  function onPlay(event) {
+    console.log('!!!!');
+    toggleVideo();
+  }
+
   function subscribe() {
     holder.addEventListener(sliderEvents.next, next);
     holder.addEventListener(sliderEvents.prev, prev);
     holder.addEventListener(sliderEvents.slide, onSlide);
     holder.addEventListener(sliderEvents.jump, onJump);
+    holder.addEventListener(sliderEvents.play, onPlay);
   }
 
   function opening() {

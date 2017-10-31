@@ -17,7 +17,12 @@ module.exports = catcher => {
     eventManager.trigger(catcher, sliderEvents.next, false, 'UIEvent');
   }
 
+  function onPlay() {
+    eventManager.trigger(catcher, sliderEvents.play, false, 'UIEvent');
+  }
+
   socket.on(sliderEvents.prev, onPrev);
   socket.on(sliderEvents.next, onNext);
+  socket.on(sliderEvents.play, onPlay);
 
 };

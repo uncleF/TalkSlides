@@ -58,13 +58,39 @@ module.exports = _ => {
     move(index);
   }
 
+  function toggleVideo() {
+    console.log('!!!');
+    const video = document
+      .querySelectorAll('.frame')[activeIndex]
+      .getElementsByTagName('video')[0];
+    if (video) {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  }
+
+  function stopVideo() {
+    const video = document
+      .querySelectorAll('.frame')[activeIndex]
+      .getElementsByTagName('video')[0];
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+
   function next() {
     const newIndex = activeIndex === maxIndex ? maxIndex : activeIndex + 1;
+    stopVideo();
     slide(newIndex);
   }
 
   function prev() {
     const newIndex = activeIndex === 0 ? 0 : activeIndex - 1;
+    stopVideo();
     slide(newIndex);
   }
 
@@ -83,11 +109,17 @@ module.exports = _ => {
     jump(event.data.index);
   }
 
+  function onPlay(event) {
+    console.log('!!!!');
+    toggleVideo();
+  }
+
   function subscribe() {
     holder.addEventListener(sliderEvents.next, next);
     holder.addEventListener(sliderEvents.prev, prev);
     holder.addEventListener(sliderEvents.slide, onSlide);
     holder.addEventListener(sliderEvents.jump, onJump);
+    holder.addEventListener(sliderEvents.play, onPlay);
   }
 
   function opening() {

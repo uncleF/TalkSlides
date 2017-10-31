@@ -830,14 +830,19 @@ body {
 /* Client UI */
 .ui {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-.next, .prev {
+.next, .prev, .play {
   color: #fff;
-  position: absolute;
-  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -851,27 +856,31 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: 100%;
-  height: 50%;
   text-align: center;
   text-decoration: none;
 }
 
-.next:visited, .prev:visited, .next:hover, .prev:hover, .next:active, .prev:active {
+.next:visited, .prev:visited, .play:visited, .next:hover, .prev:hover, .play:hover, .next:active, .prev:active, .play:active {
   color: #fff;
 }
 
-.next:focus, .prev:focus {
+.next:focus, .prev:focus, .play:focus {
   color: #fff;
 }
 
 .next {
-  top: 0;
-  background: #ff3f2e;
+  background: #009448;
 }
 
 .prev {
-  bottom: 0;
-  background: #009448;
+  background: #ff3f2e;
+}
+
+.play {
+  background: #176191;
 }
 /*# sourceMappingURL=styles.css.map */
