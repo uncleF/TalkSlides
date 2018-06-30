@@ -1,5 +1,8 @@
 /* Frame */
 
+$frame-dark-color: $white;
+$frame-dark-background: $black-light;
+
 .frame {
   @include tx-font-size($fontSize);
   display: inline-flex;
@@ -11,9 +14,65 @@
   height: 100%;
   vertical-align: top;
   white-space: normal;
+
+  &-is-dark {
+    color: $frame-dark-color;
+    background: $frame-dark-background;
+  }
+
 }
 
 .frameContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 40em;
+  height: 100%;
   padding: 0 5em;
+
+  &-is-columns {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &-is-screenshots {
+    text-align: center;
+  }
+
+}
+
+.frameImage {
+  display: block;
+  width: 100%;
+  max-height: 95%;
+  object-fit: contain;
+}
+
+.frameVideo {
+  display: block;
+  width: 100%;
+  max-height: 95%;
+  object-fit: contain;
+}
+
+.frameGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.frameChain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-is-vertical {
+    flex-direction: column;
+  }
+
 }

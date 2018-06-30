@@ -1,0 +1,14 @@
+<div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>function sendResponse(client, id) {
+  if (id !== client.id) {
+    client.postMessage('message');
+  }
+}</code></pre>
+    <pre><code>function sendResponses(clients, id) {
+  clients.forEach(function(client) {
+    sendResponse(client, id);
+  });
+}</code></pre>
+  </article>
+</div>

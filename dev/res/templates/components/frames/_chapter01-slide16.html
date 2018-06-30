@@ -1,0 +1,16 @@
+<div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>function onFetch(event) {
+  event.respondWith(caches.match(event.request));
+}</code></pre>
+    <pre><code>function fetchedFromNetwork(response) {
+  var clonedResponse = response.clone();
+  caches
+    .open('app-cache')
+    .then(function(cache) {
+      cache.put(event.request, clonedResponse);
+    });
+  return response;
+}</code></pre>
+  </article>
+</div>

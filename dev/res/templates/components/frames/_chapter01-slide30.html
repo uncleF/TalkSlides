@@ -1,0 +1,15 @@
+<div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>var files = ['/styles.css', '/scripts.js', '/l.svg'];
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches
+      .open('cache-name')
+      .then(function(cache) {
+        return cache.addAll(filesToCache);
+      });
+  );
+});</code></pre>
+  </article>
+</div>

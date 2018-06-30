@@ -1,0 +1,14 @@
+<div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>var impObj = {
+  imports: { imported_func: arg => console.log(arg) }
+};</code></pre>
+    <pre><code>fetch('/module.wasm').then(response =>
+  response.arrayBuffer()
+).then(bytes =>
+  WebAssembly.instantiate(bytes, impObj)
+).then(results => {
+  results.instance.exports.exported_func();
+});</code></pre>
+  </article>
+</div>

@@ -1,0 +1,11 @@
+<div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>function onMessage(event) {
+  self.clients
+    .matchAll()
+    .then(function(clients) {
+      sendResponses(clients, event.source.id);
+    });
+}</code></pre>
+  </article>
+</div>
