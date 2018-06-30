@@ -496,6 +496,11 @@ self.addEventListener('install', function(event) {
     </h2>
   </article>
 </div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <img src="images/chapter01/devtools.png" class="frameImage" alt="">
+  </article>
+</div>
 
   <div class="frame frame-is-dark">
   <article class="frameContent">
@@ -561,8 +566,8 @@ self.addEventListener('install', function(event) {
   <article class="frameContent">
     WebAssembly has 2 formats:
     <ul>
-      <li>Bytecode (Resembles traditional assembly languages)</li>
-      <li>Binary</li>
+      <li>Bytecode (Resembles traditional assembly languages).</li>
+      <li>Binary.</li>
     </ul>
   </article>
 </div>
@@ -642,6 +647,13 @@ self.addEventListener('install', function(event) {
   </article>
 </div>
   <div class="frame frame-is-dark">
+  <article class="frameChain">
+    <img src="images/chapter02/react.png" class="chainImage" style="max-width: none; width: 30%;" alt="">
+    <div style="font-size: 5em; margin: 0 .2em 0 0;">+</div>
+    <img src="images/chapter02/wasmLogo.png" class="chainImage" style="max-width: none; width: 25%;" alt="">
+  </article>
+</div>
+  <div class="frame frame-is-dark">
   <article class="frameContent">
     <p>In browsers WebAssembly implemented in JavaScript engine.</p>
   </article>
@@ -649,6 +661,12 @@ self.addEventListener('install', function(event) {
   <div class="frame frame-is-dark">
   <article class="frameContent">
     <p>Accessible through the <var>WebAssembly</var> global object.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <p>Each WebAssembly module executes within a sandboxed environment separated from the host runtime.</p>
+    <p>WebAssembly module can't access main thread or DOM and is a subject to a web browser restrictions on information flow through same-origin policy.</p>
   </article>
 </div>
   <div class="frame frame-is-dark">
@@ -710,7 +728,7 @@ self.addEventListener('install', function(event) {
   <div class="frame frame-is-dark">
   <article class="frameContent">
     <h3>Emscripten</h3>
-    <p>Source to source compiler to produce WebAssembly.<br> Was used to port:</p>
+    <p>Source to source compiler that produces WebAssembly.<br> Was used to port:</p>
     <ul>
       <li>Unreal Engine</li>
       <li>SQLite</li>
@@ -734,6 +752,36 @@ self.addEventListener('install', function(event) {
   <div class="frame frame-is-dark">
   <article class="frameContent">
     <h1>03<br> Houdini</h1>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h3>Most exciting development in CSS.</h3>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <p>Exposes CSS rendering engine and allows developers to hook into it.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <p>Houdini is a collection of different APIs.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <p>It's called Houdini because it's ✨CSS-magic✨.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <p>Very-very early in standard development.<br> Everything changes all the time.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <p>Very little browser support.</p>
   </article>
 </div>
   <div class="frame frame-is-dark">
@@ -772,15 +820,247 @@ self.addEventListener('install', function(event) {
     </div>
   </article>
 </div>
-
   <div class="frame frame-is-dark">
   <article class="frameContent">
-    <h1>...</h1>
+    <p>(Will be) accessible through the global object <var>CSS</var>.</p>
   </article>
 </div>
   <div class="frame frame-is-dark">
   <article class="frameContent">
-    <h1>...</h1>
+    <p>Houdini APIs extend CSS through special worklets.</p>
+    <ul>
+      <li>Worklet runs in-sync with the browser rendering engine.</li>
+      <li>Worklet has very limited scope and it's own thread.</li>
+      <li>Worklet won't affect performance in the main thread.</li>
+      <li>Worklet won't throw errors in the main thread.</li>
+      <li>If a worklet runs too slow it may be skipped at rendering time.</li>
+    </ul>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h2>Paint API</h2>
+    <p>CSS Paint API allows you to programmatically generate an image whenever a CSS property expects an image.</p>
+    <ul>
+      <li>Adds new CSS function <var>paint()</var>.</li>
+      <li>Runs in-sync with CSS rendering engine.</li>
+      <li>Very similar to a 2D Canvas API.</li>
+    </ul>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>class BoardPainter {
+  static get inputProperties() {
+    return [
+      '--checkerboard-spacing',
+      '--checkerboard-size',
+    ];
+  }
+
+  paint(ctx, geom, properties) ...
+}
+
+registerPaint('checkerboard', BoardPainter);
+</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>paint(context, geom, properties) {
+  const size = parseInt(properties
+    .get('--checkerboard-size').toString());
+  const spacing = parseInt(properties
+    .get('--checkerboard-spacing').toString());
+  const colors = ['red', 'green', 'blue'];
+  const size = 32;
+  for(let y = 0; y < geom.height / size; y++) {
+    for(let x = 0; x < geom.width / size; x++) {
+      ...
+    }
+  }
+}</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>const color = colors[(x + y) % colors.length];
+context.beginPath();
+context.fillStyle = color;
+context.rect(x * size, y * size, size, size);
+context.fill();</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>if ('paintWorklet' in CSS) {
+  CSS.paintWorklet.addModule('checkerboard.js');
+}</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>@supports (background: paint(id)) {
+  .className {
+    background: paint(checkerboard);
+  }
+}</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h2>Properties and Values API</h2>
+    <p>CSS Properties and Values API allows to register typed and animatable custom CSS properties.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+<pre><code>document.registerProperty({
+  name: '--crazy-property',
+  syntax: '<number>',
+  inherits: false,
+  initialValue: "1"
+});</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h2>Typed OM API</h2>
+    <p>Typed OM API exposes CSS values as typed JavaScript objects to facilitate their performant manipulation. Instead of strings developers will be working on an element's <var>StylePropertyMap</var>, where each CSS attribute has it’s own key and corresponding value type.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>&lt;div style="margin: calc(5em + 50%);"&gt;&lt;/div&gt;</code></pre>
+    <pre><code>const node = document.querySelector('div');
+const margin = node.styleMap.get('margin');
+console.log(margin) // {em: 5, percent: 50}</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>node.attributeStyleMap.set('margin', CSS.px(10));</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <ul>
+      <li><var>CSSUnitValue</var> — 10px</li>
+      <li><var>CSSMathValue</var> — calc(10% - 20px)</li>
+      <li><var>CSSTransformValue</var> — translate3d(10px, 10px, 0)</li>
+      <li><var>CSSVariableReferenceValue</var> — --prop</li>
+      <li><var>CSSKeywordValue</var> — initital</li>
+      <li>...</li>
+    </ul>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h2>Animation API<br>(Composited Scrolling API)</h2>
+    <p>CSS Animation API lets developers to hook into the compositing process for a certain DOM node and request access to certain attributes like scroll position, transform or opacity.</p>
+    <ul>
+      <li>Runs in-sync with CSS composing engine.</li>
+    </ul>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+<pre><code>class SyncScroll {
+  animate(root, children) {
+    ...
+  }
+};
+
+registerAnimator('sync-scroll', SyncScroll)</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+<pre><code>var input = children
+  .filter(e =>
+    e.styleMap.get("--scroller") == "input")[0];
+var outputs = children
+  .filter(e =>
+    e.styleMap.get("--scroller") == "output");
+outputs.forEach(e => {
+  e.scrollOffsets.top = input.scrollOffsets.top;
+  e.scrollOffsets.left = input.scrollOffsets.left;
+});</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+<pre><code>.main_scroller {
+  animator: sync-scroller;
+  --scroller-type: input;
+}
+
+.alt_scroller {
+  animator: sync-scroller;
+  --scroller-type: output;
+}</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h2>Layout API</h2>
+    <p>CSS Layout API is will enable developer to arrange a node's children in the node's box.</p>
+    <ul>
+      <li>Adds new CSS function <var>layout()</var>.</li>
+    </ul>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>.element {
+  display: layout('masonry');
+}</code></pre>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h2>Font Metrics API</h2>
+    <p>CSS Font Metrics API allows developers to control font rendering to a certain degree.</p>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h2>Parser API</h2>
+    <p>CSS Parser API performantly converts CSS strings into CSS Typed OM objects.</p>
+  </article>
+</div>
+
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+    <h1>04<br> ...</h1>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+  <ul>
+    <li>Variable Fonts</li>
+    <li>Notifications API</li>
+    <li>Background Sync API</li>
+    <li>Payment Request API</li>
+    <li>OffscreenCanvas API</li>
+    <li>Picture in Picture API</li>
+    <li>Intersection Observer API</li>
+    <li>WebVR API</li>
+  </ul>
+  </article>
+</div>
+  <div class="frame frame-is-dark">
+  <article class="frameContent">
+  <ul>
+    <li>WebUSB API</li>
+    <li>Web Bluetooth API</li>
+    <li>Web Share API</li>
+    <li>Push API</li>
+    <li>Geofencing API</li>
+    <li>Presentation API</li>
+    <li>Font Loading API</li>
+    <li>...</li>
+  </ul>
   </article>
 </div>
 </div>

@@ -1,5 +1,10 @@
 <div class="frame frame-is-dark">
   <article class="frameContent">
-    <p>High-level (???) languages will support WebAssembly in the future.</p>
+    <pre><code>var impObj = {
+  imports: { imported_func: arg => console.log(arg) }
+};</code></pre>
+    <pre><code>WebAssembly
+  .instantiateStreaming(fetch('/module.wasm'), impObj)
+  .then(obj => obj.instance.exports.exported_func());</code></pre>
   </article>
 </div>

@@ -1,0 +1,17 @@
+<div class="frame frame-is-dark">
+  <article class="frameContent">
+    <pre><code>paint(context, geom, properties) {
+  const size = parseInt(properties
+    .get('--checkerboard-size').toString());
+  const spacing = parseInt(properties
+    .get('--checkerboard-spacing').toString());
+  const colors = ['red', 'green', 'blue'];
+  const size = 32;
+  for(let y = 0; y < geom.height / size; y++) {
+    for(let x = 0; x < geom.width / size; x++) {
+      ...
+    }
+  }
+}</code></pre>
+  </article>
+</div>

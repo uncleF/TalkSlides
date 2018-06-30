@@ -1,10 +1,5 @@
 <div class="frame frame-is-dark">
   <article class="frameContent">
-    <pre><code>var impObj = {
-  imports: { imported_func: arg => console.log(arg) }
-};</code></pre>
-    <pre><code>WebAssembly
-  .instantiateStreaming(fetch('/module.wasm'), impObj)
-  .then(obj => obj.instance.exports.exported_func());</code></pre>
+    <p>WebAssembly organized as modules which have to be imported and instantiated.</p>
   </article>
 </div>

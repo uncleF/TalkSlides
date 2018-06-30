@@ -1,14 +1,6 @@
 <div class="frame frame-is-dark">
   <article class="frameContent">
-    <pre><code>var impObj = {
-  imports: { imported_func: arg => console.log(arg) }
-};</code></pre>
-    <pre><code>fetch('/module.wasm').then(response =>
-  response.arrayBuffer()
-).then(bytes =>
-  WebAssembly.instantiate(bytes, impObj)
-).then(results => {
-  results.instance.exports.exported_func();
-});</code></pre>
+    <p>Each WebAssembly module executes within a sandboxed environment separated from the host runtime.</p>
+    <p>WebAssembly module can't access main thread or DOM and is a subject to a web browser restrictions on information flow through same-origin policy.</p>
   </article>
 </div>
