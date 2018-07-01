@@ -16,157 +16,163 @@
 
   <body>
     <div id="frames" class="frames">
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h1>
-      👷 Service Worker API<br><br>
-      ⚡ WebAssembly<br><br>
-      🦄 Houdini
-    </h1>
-  </article>
-</div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h1>
+            👷 Service Worker API
+            <br>
+            <br> ⚡ WebAssembly
+            <br>
+            <br> 🦄 Houdini
+          </h1>
+        </article>
+      </div>
 
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h1>01<br> Service Worker API</h1>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>It is the most important API in the last 10 years.</h3>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker is basically a proxy written in JavaScript that can intercept network requests.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Supported in every major browser.<br> Can and should be used in production.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameChain">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/edge.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/firefox.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/internet-explorer.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari.png" alt="">
-    </div>
-  </article>
-  <article class="frameChain" style="margin: 5em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/opera-mini.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari-ios.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/samsung-internet.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/uc.png" alt="">
-    </div>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker works only through 🔒HTTPS<br> (as almost all of the new APIs).</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker should be used as a progressive enhancement.</p>
-    <pre><code>if ('serviceWorker' in navigator) ...</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker can be used only in its scope<br> (Intercep requests).</p>
-    <pre><code>navigator.serviceWorker.register('/sw.js')
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h1>01
+            <br> Service Worker API</h1>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h3>It is the most important API in the last 10 years.</h3>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker is basically a proxy written in JavaScript that can intercept network requests.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Supported in every major browser.
+            <br> Can and should be used in production.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameChain">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/edge.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/firefox.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/internet-explorer.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari.png" alt="">
+          </div>
+        </article>
+        <article class="frameChain" style="margin: 5em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/opera-mini.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari-ios.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/samsung-internet.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/uc.png" alt="">
+          </div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker works only through 🔒HTTPS
+            <br> (as almost all of the new APIs).</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker should be used as a progressive enhancement.</p>
+          <pre><code>if ('serviceWorker' in navigator) ...</code></pre>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker can be used only in its scope
+            <br> (Intercep requests).</p>
+          <pre><code>navigator.serviceWorker.register('/sw.js')
   .then(onSuccess)
   .catch(onFailure);</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <img src="images/chapter01/lifecycle.png" style="min-width: 578px; image-rendering: pixelated;" class="frameImage" alt="">
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker has 2 lifecycle events.</p>
-    <pre><code>self.addEventListener('install', onInstall);</code></pre>
-    <pre><code>self.addEventListener('activate', onActivate);</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Each Service Worker runs in its own separate thread.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker doesn't have access to the DOM.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker can communicate with the main thread through messages.</p>
-    <pre><code>self.addEventListener('message', onMessage);</code></pre>
-    <pre><code>navigator.serviceWorker.controller.postMessage('message');</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>function onMessage(event) {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <img src="images/chapter01/lifecycle.png" style="min-width: 578px; image-rendering: pixelated;" class="frameImage" alt="">
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker has 2 lifecycle events.</p>
+          <pre><code>self.addEventListener('install', onInstall);</code></pre>
+          <pre><code>self.addEventListener('activate', onActivate);</code></pre>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Each Service Worker runs in its own separate thread.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker doesn't have access to the DOM.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker can communicate with the main thread through messages.</p>
+          <pre><code>self.addEventListener('message', onMessage);</code></pre>
+          <pre><code>navigator.serviceWorker.controller.postMessage('message');</code></pre>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>function onMessage(event) {
   self.clients
     .matchAll()
     .then(function(clients) {
       sendResponses(clients, event.source.id);
     });
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>function sendResponse(client, id) {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>function sendResponse(client, id) {
   if (id !== client.id) {
     client.postMessage('message');
   }
 }</code></pre>
-    <pre><code>function sendResponses(clients, id) {
+          <pre><code>function sendResponses(clients, id) {
   clients.forEach(function(client) {
     sendResponse(client, id);
   });
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Worker can intercept network requests.</p>
-    <pre><code>self.addEventListener('fetch', onFetch);</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>function onFetch(event) {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Worker can intercept network requests.</p>
+          <pre><code>self.addEventListener('fetch', onFetch);</code></pre>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>function onFetch(event) {
   event.respondWith(caches.match(event.request));
 }</code></pre>
-    <pre><code>function fetchedFromNetwork(response) {
+          <pre><code>function fetchedFromNetwork(response) {
   var clonedResponse = response.clone();
   caches
     .open('app-cache')
@@ -175,221 +181,225 @@
     });
   return response;
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>👷 can be used for:</h2>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <h3 style="margin: 0;">Offline support (Cache API)</h3>
-  <article class="frameChain" style="margin: 2em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/edge.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/firefox.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/internet-explorer.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari.png" alt="">
-    </div>
-  </article>
-  <article class="frameChain" style="margin: 3em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/opera-mini.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari-ios.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/samsung-internet.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/uc.png" alt="">
-    </div>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <h3 style="margin: 0;">Push notifications (Notification API)</h3>
-  <article class="frameChain" style="margin: 2em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/edge.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/firefox.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/internet-explorer.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari.png" alt="">
-    </div>
-  </article>
-  <article class="frameChain" style="margin: 3em 0 0">
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/opera-mini.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/safari-ios.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/samsung-internet.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/uc.png" alt="">
-    </div>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <h3 style="margin: 0;">Background Sync API</h3>
-  <article class="frameChain" style="margin: 2em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/edge.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/firefox.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/internet-explorer.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/safari.png" alt="">
-    </div>
-  </article>
-  <article class="frameChain" style="margin: 3em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/opera-mini.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/safari-ios.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/samsung-internet.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/uc.png" alt="">
-    </div>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <h3 style="margin: 0;">Payment Request API</h3>
-  <article class="frameChain" style="margin: 2em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/edge.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-behindFlag">
-      <img src="images/browsers/firefox.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/internet-explorer.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari.png" alt="">
-    </div>
-  </article>
-  <article class="frameChain" style="margin: 3em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/opera-mini.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari-ios.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/samsung-internet.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/uc.png" alt="">
-    </div>
-  </article>
-</div>
-  <div class="frame">
-  <article class="frameContent">
-    <img src="images/chapter01/pwa.png" class="frameImage" alt="">
-  </article>
-</div>
-  <div class="frame">
-  <article class="frameContent frameContent-is-columns">
-    <div class="column">
-      <img src="images/chapter01/1800-flowers.jpg" class="columnImage" alt="" style="margin: -.05em 0 0 -25%; max-width: 150%;">
-    </div>
-    <div class="column" style="font-size: 1.25em;">
-      <strong>50% higher conversion</strong>
-    </div>
-  </article>
-</div>
-  <div class="frame">
-  <article class="frameContent frameContent-is-columns">
-    <div class="column">
-      <img src="images/chapter01/editoriaGlobo.png" class="columnImage" alt="">
-    </div>
-    <div class="column" style="font-size: 1.25em;">
-      <strong>40% higher engagement</strong>
-    </div>
-  </article>
-</div>
-  <div class="frame">
-  <article class="frameContent frameContent-is-columns">
-    <div class="column">
-      <img src="images/chapter01/starbucks.jpg" class="columnImage" alt="" style="margin: .75em 0 0;">
-    </div>
-    <div class="column" style="text-align: left; font-size: 1.25em;">
-      <strong>2× more active users</strong><br><br>
-      <strong><nobr>Full-featured&nbsp;desktop</nobr> experience&nbsp;became a growth point</strong>
-    </div>
-  </article>
-</div>
-  <div class="frame">
-  <article class="frameContent" style="text-align: center; font-size: 1.25em;">
-    <img src="images/chapter01/flipkart.png" class="frameImage" alt="">
-    <p><strong>Uses <var>sw-toolbox</var></strong></p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>On average 20% higher conversion.</h3>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2 style="text-align: center;">App Shell<br> +<br> Service Worker</h2>
-  </article>
-</div>
-  <div class="frame" style="background: #5eb7ff;">
-  <article class="frameContent">
-    <img src="images/chapter01/app.jpg" class="frameImage" alt="">
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>var files = ['/styles.css', '/scripts.js', '/l.svg'];
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>👷 can work with:</h2>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <h3 style="margin: 0;">Cache API (Offline support)</h3>
+        <article class="frameChain" style="margin: 2em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/edge.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/firefox.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/internet-explorer.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari.png" alt="">
+          </div>
+        </article>
+        <article class="frameChain" style="margin: 3em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/opera-mini.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari-ios.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/samsung-internet.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/uc.png" alt="">
+          </div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <h3 style="margin: 0;">Notification API (Push notifications)</h3>
+        <article class="frameChain" style="margin: 2em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/edge.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/firefox.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/internet-explorer.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari.png" alt="">
+          </div>
+        </article>
+        <article class="frameChain" style="margin: 3em 0 0">
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/opera-mini.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/safari-ios.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/samsung-internet.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/uc.png" alt="">
+          </div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <h3 style="margin: 0;">Background Sync API</h3>
+        <article class="frameChain" style="margin: 2em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/edge.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/firefox.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/internet-explorer.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/safari.png" alt="">
+          </div>
+        </article>
+        <article class="frameChain" style="margin: 3em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/opera-mini.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/safari-ios.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/samsung-internet.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/uc.png" alt="">
+          </div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <h3 style="margin: 0;">Payment Request API</h3>
+        <article class="frameChain" style="margin: 2em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/edge.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-behindFlag">
+            <img src="images/browsers/firefox.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/internet-explorer.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari.png" alt="">
+          </div>
+        </article>
+        <article class="frameChain" style="margin: 3em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/opera-mini.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari-ios.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/samsung-internet.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/uc.png" alt="">
+          </div>
+        </article>
+      </div>
+      <div class="frame">
+        <article class="frameContent">
+          <img src="images/chapter01/pwa.png" class="frameImage" alt="">
+        </article>
+      </div>
+      <div class="frame">
+        <article class="frameContent frameContent-is-columns">
+          <div class="column">
+            <img src="images/chapter01/1800-flowers.jpg" class="columnImage" alt="" style="margin: -.05em 0 0 -25%; max-width: 150%;">
+          </div>
+          <div class="column" style="font-size: 1.25em;">
+            <strong>50% higher conversion</strong>
+          </div>
+        </article>
+      </div>
+      <div class="frame">
+        <article class="frameContent frameContent-is-columns">
+          <div class="column">
+            <img src="images/chapter01/editoriaGlobo.png" class="columnImage" alt="">
+          </div>
+          <div class="column" style="font-size: 1.25em;">
+            <strong>40% higher engagement</strong>
+          </div>
+        </article>
+      </div>
+      <div class="frame">
+        <article class="frameContent frameContent-is-columns">
+          <div class="column">
+            <img src="images/chapter01/starbucks.jpg" class="columnImage" alt="" style="margin: .75em 0 0;">
+          </div>
+          <div class="column" style="text-align: left; font-size: 1.25em;">
+            <strong>2× more active users</strong>
+            <br>
+            <br>
+            <strong><nobr>Full-featured&nbsp;desktop</nobr> experience&nbsp;became a growth point</strong>
+          </div>
+        </article>
+      </div>
+      <div class="frame">
+        <article class="frameContent" style="text-align: center; font-size: 1.25em;">
+          <img src="images/chapter01/flipkart.png" class="frameImage" alt="">
+          <p><strong>Uses <var>sw-toolbox</var></strong></p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>On average 20% higher conversion.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2 style="text-align: center;">App Shell
+            <br> +
+            <br> Service Worker</h2>
+        </article>
+      </div>
+      <div class="frame" style="background: #5eb7ff;">
+        <article class="frameContent">
+          <img src="images/chapter01/app.jpg" class="frameImage" alt="">
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>var files = ['/styles.css', '/scripts.js', '/l.svg'];
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -400,457 +410,480 @@ self.addEventListener('install', function(event) {
       });
   );
 });</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    Application shell initital load performance with populated cache...
-    <ul>
-      <li>and a Service Worker — <span class="highlightGreen">225</span> ms</li>
-      <li>without Service Worket — <span class="highlightRed">625</span> ms</li>
-    </ul>
-    Especially critical for mobile experience because of how cell internet connection works.
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <ul>
-      <li>1 second load results in 11% less views and 16% drop in customer satisfaction.</li>
-      <li>53% of users leave the site if it's load time is over 3 seconds.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    Different caching strategies:
-    <ul>
-      <li>Network first.</li>
-      <li>Cache first.</li>
-      <li>Fastest — network or cache, whichever comes back first.</li>
-      <li>Offline.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame">
-  <article class="frameContent">
-    <img src="images/chapter01/amp.png" class="frameImage" alt="">
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Service Workers can be used with AMP to leverage it's fast delivery network.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <ul>
-      <li>AMP as PWA</li>
-      <li>AMP to PWA</li>
-      <li>AMP in PWA</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p><u>AMP as PWA — AMP + Service Worker</u></p>
-    <p>When user opens a link he is served an AMP version of the article and a Service Worker.</p>
-    <p>Service Worker loads and caches content from the AMP server, while user is reading the article.</p>
-    <p>After caching has completed, user is served (instantly) content from the cache.</p>
-    <p>This pattern uses AMP-HTML. Ideal for static sites.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p><u>AMP to PWA — AMP + Service Worker + WebApp</u></p>
-    <p>When user opens a link he is served an AMP version of the content and a Service Worker.</p>
-    <p>Service Worker loads and caches app shell and initial data from the server.</p>
-    <p>When user clicks another link to navigate to another page he is taken (instantly) to the full-featured WebApp.</p>
-    <p>Backend has to serve content in 2 forms — as AMP-HTML and JSON.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p><u>AMP in PWA — WebApp + AMP (+ Service Worker)</u></p>
-    <p>WebApp hijacks navigation clicks and fetches AMP pages (and caches them using Service Worker).</p>
-    <p>AMP content is displayed using Shadow DOM inside the WebApp shell, so the whole page doesn't have to reinitialize with every navigation event.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>Tools</h3>
-    <ul>
-      <li><var>sw-precache</var> - caching and maintaining app shell.</li>
-      <li><var>sw-toolbox</var> - caching strategies for the content.</li>
-      <li><var>Workbox</var> - tool library for PWA development.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>
-      Best 👏<br>
-      Caching 👏<br>
-      Practices 👏<br>
-      Still 👏<br>
-      Apply 👏
-    </h2>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <img src="images/chapter01/devtools.png" class="frameImage" alt="">
-  </article>
-</div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          Application shell initital load performance with populated cache...
+          <ul>
+            <li>and a Service Worker —
+              <span class="highlightGreen">225</span> ms</li>
+            <li>without Service Worket —
+              <span class="highlightRed">625</span> ms</li>
+          </ul>
+          Especially critical for mobile experience because of how cell internet connection works.
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <ul>
+            <li>1 second load results in 11% less views and 16% drop in customer satisfaction.</li>
+            <li>53% of users leave the site if its load time is over 3 seconds.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          Different caching strategies:
+          <ul>
+            <li>Network first.</li>
+            <li>Cache first.</li>
+            <li>Fastest — network or cache, whichever comes back first.</li>
+            <li>Offline.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame">
+        <article class="frameContent">
+          <img src="images/chapter01/amp.png" class="frameImage" alt="">
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Service Workers can be used with AMP to leverage it's fast delivery network.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <ul>
+            <li>AMP as PWA</li>
+            <li>AMP to PWA</li>
+            <li>AMP in PWA</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>
+            <u>AMP as PWA — AMP + Service Worker</u>
+          </p>
+          <p>When user opens a link he is served an AMP version of the article and a Service Worker.</p>
+          <p>Service Worker loads and caches content from the AMP server, while user is reading the article.</p>
+          <p>After caching has completed, user is served (instantly) content from the cache.</p>
+          <p>This pattern uses AMP-HTML. Ideal for static sites.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>
+            <u>AMP to PWA — AMP + Service Worker + WebApp</u>
+          </p>
+          <p>When user opens a link he is served an AMP version of the content and a Service Worker.</p>
+          <p>Service Worker loads and caches app shell and initial data from the server.</p>
+          <p>When user clicks another link to navigate to another page he is taken (instantly) to the full-featured WebApp.</p>
+          <p>Backend has to serve content in 2 forms — as AMP-HTML and JSON.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>
+            <u>AMP in PWA — WebApp + AMP (+ Service Worker)</u>
+          </p>
+          <p>WebApp hijacks navigation clicks and fetches AMP pages (and caches them using Service Worker).</p>
+          <p>AMP content is displayed using Shadow DOM inside the WebApp shell, so the whole page doesn't have to reinitialize with every navigation event.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h3>Tools</h3>
+          <ul>
+            <li>
+              <var>sw-precache</var> - caching and maintaining app shell.</li>
+            <li>
+              <var>sw-toolbox</var> - caching strategies for the content.</li>
+            <li>
+              <var>Workbox</var> - tool library for PWA development.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>
+            Best 👏
+            <br> Caching 👏
+            <br> Practices 👏
+            <br> Still 👏
+            <br> Apply 👏
+          </h2>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <img src="images/chapter01/devtools.png" class="frameImage" alt="">
+        </article>
+      </div>
 
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h1>02<br> WebAssembly</h1>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>WebAssembly is a compiler target for other languages.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    Continuation of 2 similar projects by Goolge and Mozilla:
-    <ul>
-      <li>(P)NaCl ((Portable) Native Client)</li>
-      <li>asm.js</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    Natively supported everywhere.<br> Can and should be used in production.
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameChain">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/edge.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/firefox.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/internet-explorer.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari.png" alt="">
-    </div>
-  </article>
-  <article class="frameChain" style="margin: 5em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/opera-mini.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/safari-ios.png" alt="">
-    </div>
-    <div class="browserImage">
-      <img src="images/browsers/samsung-internet.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/uc.png" alt="">
-    </div>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    WebAssembly has 2 formats:
-    <ul>
-      <li>Bytecode (Resembles traditional assembly languages).</li>
-      <li>Binary.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <img src="images/chapter02/wasmExplorer.png" class="frameImage" alt="">
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>Features</h3>
-    <ul>
-      <li><nobr>Language-independent</nobr>.</li>
-      <li><nobr>Platform-independent</nobr>.</li>
-      <li><nobr>Hardware-independent</nobr>.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>Features</h3>
-    <ul>
-      <li>Compact.</li>
-      <li>Easy to generate.</li>
-      <li>Fast to decode.</li>
-      <li>Fast to validate.</li>
-      <li>Fast to compile.</li>
-      <li>Fast to execute.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>Future Features</h3>
-    <ul>
-      <li>Streamable.</li>
-      <li>Parallelizable.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>WebAssembly enables features that JavaScript can't support...</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>
-      But 👏<br>
-      It 👏<br>
-      Doesn't 👏<br>
-      Replace 👏<br>
-      JavaScript 👏<br>
-    </h2>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p style="text-align: center; font-size: 1.75em; font-weight: bold;">⚡ Performance!!!</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p style="text-align: center; font-size: 2.5em; font-weight: bold;">💥&nbsp;Predictable 🔥 ⚡&nbsp;Performance!!!!! 🤯</p>
-  </article>
-</div>
-  <div class="frame">
-  <article class="frameChain">
-    <img src="images/chapter02/googleEarth.png" class="chainImage" alt="">
-    <img src="images/chapter02/autocad.png" class="chainImage" alt="">
-    <img src="images/chapter02/figma.svg" class="chainImage" alt="">
-  </article>
-  <article class="frameChain" style="margin: 2em 0 0">
-    <img src="images/chapter02/twitch.png" class="chainImage" alt="">
-    <img src="images/chapter02/unrealEngine.png" class="chainImage" alt="">
-    <img src="images/chapter02/unity.png" class="chainImage" alt="">
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameChain">
-    <img src="images/chapter02/react.png" class="chainImage" style="max-width: none; width: 30%;" alt="">
-    <div style="font-size: 5em; margin: 0 .2em 0 0;">+</div>
-    <img src="images/chapter02/wasmLogo.png" class="chainImage" style="max-width: none; width: 25%;" alt="">
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>In browsers WebAssembly implemented in JavaScript engine.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Accessible through the <var>WebAssembly</var> global object.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Each WebAssembly module executes within a sandboxed environment separated from the host runtime.</p>
-    <p>WebAssembly module can't access main thread or DOM and is a subject to a web browser restrictions on information flow through same-origin policy.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>WebAssembly organized as modules which have to be imported and instantiated.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>var impObj = {
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h1>02
+            <br> WebAssembly</h1>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>WebAssembly is a compiler target for other languages.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          Continuation of 2 similar projects by Goolge and Mozilla:
+          <ul>
+            <li>(P)NaCl ((Portable) Native Client)</li>
+            <li>asm.js</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          Natively supported everywhere.
+          <br> Can and should be used in production.
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameChain">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/edge.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/firefox.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/internet-explorer.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari.png" alt="">
+          </div>
+        </article>
+        <article class="frameChain" style="margin: 5em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/opera-mini.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/safari-ios.png" alt="">
+          </div>
+          <div class="browserImage">
+            <img src="images/browsers/samsung-internet.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/uc.png" alt="">
+          </div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          WebAssembly has 2 formats:
+          <ul>
+            <li>Bytecode (Resembles traditional assembly languages).</li>
+            <li>Binary.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <img src="images/chapter02/wasmExplorer.png" class="frameImage" alt="">
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h3>Features</h3>
+          <ul>
+            <li>
+              <nobr>Language-independent</nobr>.</li>
+            <li>
+              <nobr>Platform-independent</nobr>.</li>
+            <li>
+              <nobr>Hardware-independent</nobr>.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h3>Features</h3>
+          <ul>
+            <li>Compact.</li>
+            <li>Easy to generate.</li>
+            <li>Fast to decode.</li>
+            <li>Fast to validate.</li>
+            <li>Fast to compile.</li>
+            <li>Fast to execute.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h3>Future Features</h3>
+          <ul>
+            <li>Streamable.</li>
+            <li>Parallelizable.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>WebAssembly enables features that JavaScript can't support...</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>
+            But 👏
+            <br> It 👏
+            <br> Doesn't 👏
+            <br> Replace 👏
+            <br> JavaScript 👏
+            <br>
+          </h2>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p style="text-align: center; font-size: 1.75em; font-weight: bold;">⚡ Performance!!!</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p style="text-align: center; font-size: 2.5em; font-weight: bold;">💥&nbsp;Predictable 🔥 ⚡&nbsp;Performance!!!!! 🤯</p>
+        </article>
+      </div>
+      <div class="frame">
+        <article class="frameChain">
+          <img src="images/chapter02/googleEarth.png" class="chainImage" alt="">
+          <img src="images/chapter02/autocad.png" class="chainImage" alt="">
+          <img src="images/chapter02/figma.svg" class="chainImage" alt="">
+        </article>
+        <article class="frameChain" style="margin: 2em 0 0">
+          <img src="images/chapter02/twitch.png" class="chainImage" alt="">
+          <img src="images/chapter02/unrealEngine.png" class="chainImage" alt="">
+          <img src="images/chapter02/unity.png" class="chainImage" alt="">
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameChain">
+          <img src="images/chapter02/react.png" class="chainImage" style="max-width: none; width: 30%;" alt="">
+          <div style="font-size: 5em; margin: 0 .2em 0 0;">+</div>
+          <img src="images/chapter02/wasmLogo.png" class="chainImage" style="max-width: none; width: 25%;" alt="">
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>In browsers WebAssembly implemented in JavaScript engine.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Accessible through the
+            <var>WebAssembly</var> global object.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Each WebAssembly module executes within a sandboxed environment separated from the host runtime.</p>
+          <p>WebAssembly module can't access main thread or DOM and is a subject to a web browser restrictions on information flow through same-origin policy.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>WebAssembly organized as modules which have to be imported and instantiated.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>var impObj = {
   imports: { imported_func: arg => console.log(arg) }
 };</code></pre>
-    <pre><code>fetch('/module.wasm').then(response =>
+          <pre><code>fetch('/module.wasm').then(response =>
   response.arrayBuffer()
 ).then(bytes =>
   WebAssembly.instantiate(bytes, impObj)
 ).then(results => {
   results.instance.exports.exported_func();
 });</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>var impObj = {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>var impObj = {
   imports: { imported_func: arg => console.log(arg) }
 };</code></pre>
-    <pre><code>WebAssembly
+          <pre><code>WebAssembly
   .instantiateStreaming(fetch('/module.wasm'), impObj)
   .then(obj => obj.instance.exports.exported_func());</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    Languages that compile to WebAssembly:
-    <ul>
-      <li>C</li>
-      <li>C++</li>
-      <li>Rust</li>
-      <li>GO</li>
-      <li>...JavaScript (TypeScript through AssemblyScript)</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>High-level (???) languages will support WebAssembly in the future.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Already in Node.js</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>WebAssembly will be used for contracts in Ethereum.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>Emscripten</h3>
-    <p>Source to source compiler that produces WebAssembly.<br> Was used to port:</p>
-    <ul>
-      <li>Unreal Engine</li>
-      <li>SQLite</li>
-      <li>MeshLab</li>
-      <li>Bullet Physics</li>
-      <li>AutoCAD</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <img src="images/chapter02/firefoxWasmExplorer.png" class="frameImage" alt="">
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <img src="images/chapter02/wasmStudio.png" class="frameImage" alt="">
-  </article>
-</div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          Languages that compile to WebAssembly:
+          <ul>
+            <li>C</li>
+            <li>C++</li>
+            <li>Rust</li>
+            <li>GO</li>
+            <li>...JavaScript (TypeScript through AssemblyScript)</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>High-level (???) languages will support WebAssembly in the future.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Already in Node.js</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>WebAssembly will be used for contracts in Ethereum.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h3>Emscripten</h3>
+          <p>Source to source compiler that produces WebAssembly.
+            <br> Was used to port:</p>
+          <ul>
+            <li>Unreal Engine</li>
+            <li>SQLite</li>
+            <li>MeshLab</li>
+            <li>Bullet Physics</li>
+            <li>AutoCAD</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <img src="images/chapter02/firefoxWasmExplorer.png" class="frameImage" alt="">
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <img src="images/chapter02/wasmStudio.png" class="frameImage" alt="">
+        </article>
+      </div>
 
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h1>03<br> Houdini</h1>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h3>Most exciting development in CSS.</h3>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Exposes CSS rendering engine and allows developers to hook into it.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Houdini is a collection of different APIs.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>It's called Houdini because it's ✨CSS-magic✨.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Very-very early in standard development.<br> Everything changes all the time.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Very little browser support.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameChain">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/edge.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/firefox.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/internet-explorer.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/safari.png" alt="">
-    </div>
-  </article>
-  <article class="frameChain" style="margin: 5em 0 0">
-    <div class="browserImage">
-      <img src="images/browsers/chrome.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/opera-mini.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/safari-ios.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/samsung-internet.png" alt="">
-    </div>
-    <div class="browserImage browserImage-is-notSupported">
-      <img src="images/browsers/uc.png" alt="">
-    </div>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>(Will be) accessible through the global object <var>CSS</var>.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <p>Houdini APIs extend CSS through special worklets.</p>
-    <ul>
-      <li>Worklet runs in-sync with the browser rendering engine.</li>
-      <li>Worklet has very limited scope and it's own thread.</li>
-      <li>Worklet won't affect performance in the main thread.</li>
-      <li>Worklet won't throw errors in the main thread.</li>
-      <li>If a worklet runs too slow it may be skipped at rendering time.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>Paint API</h2>
-    <p>CSS Paint API allows you to programmatically generate an image whenever a CSS property expects an image.</p>
-    <ul>
-      <li>Adds new CSS function <var>paint()</var>.</li>
-      <li>Runs in-sync with CSS rendering engine.</li>
-      <li>Very similar to a 2D Canvas API.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>class BoardPainter {
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h1>03
+            <br> Houdini</h1>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h3>Most exciting development in CSS.</h3>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Exposes CSS rendering engine and allows developers to hook into it. In a way Houdini is very similar to the Shadow DOM and Custom Elements APIs.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Houdini is a collection of different APIs.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>It's called Houdini because it's ✨CSS-magic✨.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Very-very early in standard development.
+            <br> Everything changes all the time.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Very little browser support.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameChain">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/edge.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/firefox.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/internet-explorer.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/safari.png" alt="">
+          </div>
+        </article>
+        <article class="frameChain" style="margin: 5em 0 0">
+          <div class="browserImage">
+            <img src="images/browsers/chrome.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/opera-mini.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/safari-ios.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/samsung-internet.png" alt="">
+          </div>
+          <div class="browserImage browserImage-is-notSupported">
+            <img src="images/browsers/uc.png" alt="">
+          </div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>(Will be) accessible through the global object
+            <var>CSS</var>.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <p>Houdini APIs extend CSS through special worklets.</p>
+          <ul>
+            <li>Worklet runs in-sync with the browser rendering engine.</li>
+            <li>Worklet has very limited scope and it's own thread.</li>
+            <li>Worklet won't affect performance in the main thread.</li>
+            <li>Worklet won't throw errors in the main thread.</li>
+            <li>If a worklet runs too slow it may be skipped at rendering time.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>Paint API</h2>
+          <p>CSS Paint API allows you to programmatically generate an image whenever a CSS property expects an image.</p>
+          <ul>
+            <li>Adds new CSS function
+              <var>paint()</var>.</li>
+            <li>Runs in-sync with CSS rendering engine.</li>
+            <li>Very similar to a 2D Canvas API.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>class BoardPainter {
   static get inputProperties() {
     return [
       '--checkerboard-spacing',
@@ -863,120 +896,125 @@ self.addEventListener('install', function(event) {
 
 registerPaint('checkerboard', BoardPainter);
 </code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>paint(context, geom, properties) {
-  const size = parseInt(properties
-    .get('--checkerboard-size').toString());
-  const spacing = parseInt(properties
-    .get('--checkerboard-spacing').toString());
-  const colors = ['red', 'green', 'blue'];
-  const size = 32;
-  for(let y = 0; y < geom.height / size; y++) {
-    for(let x = 0; x < geom.width / size; x++) {
-      ...
-    }
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>const size = parseInt(properties
+  .get('--checkerboard-size').toString());
+const spacing = parseInt(properties
+  .get('--checkerboard-spacing').toString());
+const colors = ['red', 'green', 'blue'];
+const size = 32;
+for(let y = 0; y < geom.height / size; y++) {
+  for(let x = 0; x < geom.width / size; x++) {
+    ...
   }
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>const color = colors[(x + y) % colors.length];
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>const color = colors[(x + y) % colors.length];
 context.beginPath();
 context.fillStyle = color;
 context.rect(x * size, y * size, size, size);
 context.fill();</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>if ('paintWorklet' in CSS) {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>if ('paintWorklet' in CSS) {
   CSS.paintWorklet.addModule('checkerboard.js');
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>@supports (background: paint(id)) {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>@supports (background: paint(id)) {
   .className {
     background: paint(checkerboard);
   }
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>Properties and Values API</h2>
-    <p>CSS Properties and Values API allows to register typed and animatable custom CSS properties.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-<pre><code>document.registerProperty({
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>Properties and Values API</h2>
+          <p>CSS Properties and Values API allows to register typed and animatable custom CSS properties.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>document.registerProperty({
   name: '--crazy-property',
   syntax: '<number>',
   inherits: false,
   initialValue: "1"
 });</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>Typed OM API</h2>
-    <p>Typed OM API exposes CSS values as typed JavaScript objects to facilitate their performant manipulation. Instead of strings developers will be working on an element's <var>StylePropertyMap</var>, where each CSS attribute has it’s own key and corresponding value type.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>&lt;div style="margin: calc(5em + 50%);"&gt;&lt;/div&gt;</code></pre>
-    <pre><code>const node = document.querySelector('div');
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>Typed OM API</h2>
+          <p>Typed OM API exposes CSS values as typed JavaScript objects to facilitate their performant manipulation. Instead of strings developers will be working on an element's
+            <var>StylePropertyMap</var>, where each CSS attribute has it’s own key and corresponding value type. Solves the problem of performance overhead when converting strings into CSS values and back.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>&lt;div style="margin: calc(5em + 50%);"&gt;&lt;/div&gt;</code></pre>
+          <pre><code>const node = document.querySelector('div');
 const margin = node.styleMap.get('margin');
 console.log(margin) // {em: 5, percent: 50}</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>node.attributeStyleMap.set('margin', CSS.px(10));</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <ul>
-      <li><var>CSSUnitValue</var> — 10px</li>
-      <li><var>CSSMathValue</var> — calc(10% - 20px)</li>
-      <li><var>CSSTransformValue</var> — translate3d(10px, 10px, 0)</li>
-      <li><var>CSSVariableReferenceValue</var> — --prop</li>
-      <li><var>CSSKeywordValue</var> — initital</li>
-      <li>...</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>Animation API<br>(Composited Scrolling API)</h2>
-    <p>CSS Animation API lets developers to hook into the compositing process for a certain DOM node and request access to certain attributes like scroll position, transform or opacity.</p>
-    <ul>
-      <li>Runs in-sync with CSS composing engine.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-<pre><code>class SyncScroll {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>node.attributeStyleMap.set('margin', CSS.px(10));</code></pre>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <ul>
+            <li>
+              <var>CSSUnitValue</var> — 10px</li>
+            <li>
+              <var>CSSMathValue</var> — calc(10% - 20px)</li>
+            <li>
+              <var>CSSTransformValue</var> — translate3d(10px, 10px, 0)</li>
+            <li>
+              <var>CSSVariableReferenceValue</var> — --prop</li>
+            <li>
+              <var>CSSKeywordValue</var> — initital</li>
+            <li>...</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>Animation API
+            <br>(Composited Scrolling API)</h2>
+          <p>CSS Animation API lets developers to hook into the compositing process for a certain DOM node and request access to certain attributes like scroll position, transform or opacity.</p>
+          <ul>
+            <li>Runs in-sync with CSS composing engine.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>class SyncScroll {
   animate(root, children) {
     ...
   }
 };
 
 registerAnimator('sync-scroll', SyncScroll)</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-<pre><code>var input = children
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>var input = children
   .filter(e =>
     e.styleMap.get("--scroller") == "input")[0];
 var outputs = children
@@ -986,11 +1024,11 @@ outputs.forEach(e => {
   e.scrollOffsets.top = input.scrollOffsets.top;
   e.scrollOffsets.left = input.scrollOffsets.left;
 });</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-<pre><code>.main_scroller {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>.main_scroller {
   animator: sync-scroller;
   --scroller-type: input;
 }
@@ -999,71 +1037,73 @@ outputs.forEach(e => {
   animator: sync-scroller;
   --scroller-type: output;
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>Layout API</h2>
-    <p>CSS Layout API is will enable developer to arrange a node's children in the node's box.</p>
-    <ul>
-      <li>Adds new CSS function <var>layout()</var>.</li>
-    </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <pre><code>.element {
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>Layout API</h2>
+          <p>CSS Layout API is will enable developer to arrange a node's children in the node's box.</p>
+          <ul>
+            <li>Adds new CSS function
+              <var>layout()</var>.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <pre><code>.element {
   display: layout('masonry');
 }</code></pre>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>Font Metrics API</h2>
-    <p>CSS Font Metrics API allows developers to control font rendering to a certain degree.</p>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h2>Parser API</h2>
-    <p>CSS Parser API performantly converts CSS strings into CSS Typed OM objects.</p>
-  </article>
-</div>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>Font Metrics API</h2>
+          <p>CSS Font Metrics API allows developers to control font rendering to a certain degree.</p>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h2>Parser API</h2>
+          <p>CSS Parser API performantly converts CSS strings into CSS Typed OM objects.</p>
+        </article>
+      </div>
 
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-    <h1>04<br> ...</h1>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-  <ul>
-    <li>Variable Fonts</li>
-    <li>Notifications API</li>
-    <li>Background Sync API</li>
-    <li>Payment Request API</li>
-    <li>OffscreenCanvas API</li>
-    <li>Picture in Picture API</li>
-    <li>Intersection Observer API</li>
-    <li>WebVR API</li>
-  </ul>
-  </article>
-</div>
-  <div class="frame frame-is-dark">
-  <article class="frameContent">
-  <ul>
-    <li>WebUSB API</li>
-    <li>Web Bluetooth API</li>
-    <li>Web Share API</li>
-    <li>Push API</li>
-    <li>Geofencing API</li>
-    <li>Presentation API</li>
-    <li>Font Loading API</li>
-    <li>...</li>
-  </ul>
-  </article>
-</div>
-</div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <h1>04
+            <br> ...</h1>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <ul>
+            <li>Variable Fonts</li>
+            <li>Notifications API</li>
+            <li>Background Sync API</li>
+            <li>Payment Request API</li>
+            <li>OffscreenCanvas API</li>
+            <li>Picture in Picture API</li>
+            <li>Intersection Observer API</li>
+            <li>WebVR API</li>
+          </ul>
+        </article>
+      </div>
+      <div class="frame frame-is-dark">
+        <article class="frameContent">
+          <ul>
+            <li>WebUSB API</li>
+            <li>Web Bluetooth API</li>
+            <li>Web Share API</li>
+            <li>Push API</li>
+            <li>Geofencing API</li>
+            <li>Presentation API</li>
+            <li>Font Loading API</li>
+            <li>...</li>
+          </ul>
+        </article>
+      </div>
+    </div>
     <script src="res/js/scriptsSlides.js" defer></script>
   </body>
 

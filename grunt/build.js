@@ -7,7 +7,7 @@ module.exports = (grunt) => {
     'clean:build',
     'copy:build',
     'imagemin:meta',
-    'htmlmin',
+    // 'htmlmin',
     'prettify',
     'compress'
   ]);
