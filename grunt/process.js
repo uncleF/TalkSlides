@@ -45,7 +45,7 @@ module.exports = (grunt, options) => {
   grunt.registerTask('process-css', [
     'sass',
     'postcss',
-    'uncss',
+    // 'uncss',
     'csscomb',
     'cssc',
     'string-replace:css',

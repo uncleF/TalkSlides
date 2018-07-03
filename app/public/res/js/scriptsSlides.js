@@ -12,6 +12,8 @@ module.exports = function (_) {
   }
 
   codes.forEach(highlightCode);
+
+  console.log(Prism);
 };
 
 },{"prismjs":42}],2:[function(require,module,exports){
