@@ -10,4 +10,6 @@ module.exports = _ => {
 
   codes.forEach(highlightCode);
 
+  console.log(Prism);
+
 }

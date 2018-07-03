@@ -12,10 +12,11 @@ module.exports = function (_) {
   }
 
   codes.forEach(highlightCode);
+
+  console.log(Prism);
 };
 
 },{"prismjs":42}],2:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -43,7 +44,6 @@ module.exports = function (catcher, slides) {
 };
 
 },{"patterns/tx-event":6,"slides/sliderEvents":7}],3:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -77,7 +77,6 @@ module.exports = function (catcher) {
 };
 
 },{"patterns/tx-event":6,"slides/sliderEvents":7}],4:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -112,7 +111,6 @@ module.exports = function (catcher) {
 };
 
 },{"patterns/tx-event":6,"slides/sliderEvents":7}],5:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -137,7 +135,6 @@ module.exports = function (catcher) {
 };
 
 },{"patterns/tx-event":6,"slides/sliderEvents":7,"socket.io-client":44}],6:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -207,7 +204,6 @@ exports.trigger = trigger;
 exports.target = target;
 
 },{}],7:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -220,7 +216,6 @@ module.exports = {
 };
 
 },{}],8:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';
@@ -339,7 +334,6 @@ module.exports = function (_) {
 };
 
 },{"input/focus":2,"input/keyboard":3,"input/mouse":4,"input/socket":5,"slides/sliderEvents":7}],9:[function(require,module,exports){
-
 /* jshint browser:true */
 
 'use strict';

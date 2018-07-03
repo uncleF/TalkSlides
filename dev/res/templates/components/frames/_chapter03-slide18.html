@@ -1,6 +1,10 @@
 <div class="frame frame-is-dark">
   <article class="frameContent">
-    <h2>Typed OM API</h2>
-    <p>Typed OM API exposes CSS values as typed JavaScript objects to facilitate their performant manipulation. Instead of strings developers will be working on an element's <var>StylePropertyMap</var>, where each CSS attribute has it’s own key and corresponding value type. Solves the problem of performance overhead when converting strings into CSS values and back.</p>
+<pre><code>document.registerProperty({
+  name: '--crazy-property',
+  syntax: '<number>',
+  inherits: false,
+  initialValue: "1"
+});</code></pre>
   </article>
 </div>

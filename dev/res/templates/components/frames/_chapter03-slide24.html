@@ -1,14 +1,11 @@
 <div class="frame frame-is-dark">
   <article class="frameContent">
-<pre><code>var input = children
-  .filter(e =>
-    e.styleMap.get("--scroller") == "input")[0];
-var outputs = children
-  .filter(e =>
-    e.styleMap.get("--scroller") == "output");
-outputs.forEach(e => {
-  e.scrollOffsets.top = input.scrollOffsets.top;
-  e.scrollOffsets.left = input.scrollOffsets.left;
-});</code></pre>
+<pre><code>class SyncScroll {
+  animate(root, children) {
+    ...
+  }
+};
+
+registerAnimator('sync-scroll', SyncScroll)</code></pre>
   </article>
 </div>

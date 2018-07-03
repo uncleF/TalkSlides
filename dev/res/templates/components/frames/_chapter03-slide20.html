@@ -1,5 +1,8 @@
 <div class="frame frame-is-dark">
   <article class="frameContent">
-    <pre><code>node.attributeStyleMap.set('margin', CSS.px(10));</code></pre>
+    <pre><code>&lt;div style="margin: calc(5em + 50%);"&gt;&lt;/div&gt;</code></pre>
+    <pre><code>const node = document.querySelector('div');
+const margin = node.styleMap.get('margin');
+console.log(margin) // {em: 5, percent: 50}</code></pre>
   </article>
 </div>
